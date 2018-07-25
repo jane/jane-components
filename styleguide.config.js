@@ -44,11 +44,11 @@ module.exports = {
       text: 12,
       base: 11,
     },
-    sidebarWidth: 230,
+    sidebarWidth: 230
   },
   styleguideDir: 'docs',
   ribbon: {
     url: 'https://github.com/jane/jane-components',
-    text: 'Contribute on GitHub',
-  },
+    text: 'Contribute on GitHub'
+  }
 }
