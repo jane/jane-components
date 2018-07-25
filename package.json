@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm t",
-    "start": "node index",
+    "start": "styleguidist server",
     "test": "exit 0"
   },
   "homepage": "https://github.com/jane/jane-components#readme",
@@ -23,7 +23,22 @@
     "react"
   ],
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.5",
+    "babel-plugin-styled-components": "1.5.1",
+    "babel-plugin-styled-name": "2.0.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-flow-strip-types": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "prop-types": "15.6.2",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
+    "react-styleguidist": "7.1.0",
+    "webpack": "4.16.2"
+  },
   "engines": {
     "node": ">=8.0.0"
   }
