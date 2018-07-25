@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "test": ""
+    "test": "exit 0"
   },
   "homepage": "https://github.com/jane/jane-components#readme",
   "repository": {

@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11.3
+    working_directory: ~/jane-components
+    steps:
+      - checkout
+      - run: npm i
+      - run: npm run build
