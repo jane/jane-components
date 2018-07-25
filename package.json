@@ -1,0 +1,29 @@
+{
+  "name": "jane-components",
+  "description": "jane-components",
+  "version": "0.0.1",
+  "author": "Jane web team",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": ""
+  },
+  "homepage": "https://github.com/jane/jane-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jane/jane-components.git"
+  },
+  "bugs": "https://github.com/jane/jane-components/issues",
+  "keywords": [
+    "components",
+    "jane",
+    "jane-components",
+    "react"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
