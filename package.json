@@ -17,6 +17,7 @@
     "format": "prettier \"{src,config}/**/*.js\" \"*.js\" --write && fixpack",
     "postbuild": "npm run docs",
     "prebuild": "npm run test:build",
+    "precommit": "lint-staged && fixpack",
     "preversion": "npm run build",
     "start": "styleguidist server",
     "test": "run-s -s test:lint test:jest",
