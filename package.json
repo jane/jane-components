@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "build": "npm t",
     "start": "node index",
     "test": "exit 0"
   },
