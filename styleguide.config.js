@@ -34,7 +34,7 @@ module.exports = {
       sidebarBackground: '#192a33'
     },
     fontFamily: {
-      // base: '"Oxygen" sans-serif' 
+      // base: '"Oxygen" sans-serif'
     },
 
     fontSize: {
@@ -45,6 +45,10 @@ module.exports = {
       base: 11
     },
     sidebarWidth: 230
+  },
+  styleguideDir: 'docs',
+  ribbon: {
+    url: 'https://github.com/jane/jane-components',
+    text: 'Contribute on GitHub'
   }
-
 }
