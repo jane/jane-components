@@ -9,7 +9,7 @@
 
 ## Installation
 
-`npm i jane-components`
+`npm i jane-components react react-dom styled-components`
 
 ## Usage
 
