@@ -24,7 +24,7 @@ const webpackConfig = {
 }
 
 module.exports = {
-  components: 'components/**/*.js',
+  components: 'src/**/*.js',
   webpackConfig,
   theme: {
     spaceFactor: 30,
