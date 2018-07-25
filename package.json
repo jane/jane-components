@@ -19,9 +19,9 @@
     "test": "run-s -s test:lint test:jest",
     "test:build": "run-s -s test:lint cover cover:coveralls",
     "test:jest": "node config/jest/test.js --env=jsdom",
-    "test:lint": "eslint src config"
+    "test:lint": "eslint src config *.js"
   },
-  "homepage": "https://github.com/jane/jane-components#readme",
+  "homepage": "https://jane.github.io/jane-components",
   "repository": {
     "type": "git",
     "url": "https://github.com/jane/jane-components.git"
