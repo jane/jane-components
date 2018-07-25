@@ -10,6 +10,7 @@
     "lib"
   ],
   "scripts": {
+    "docs": "styleguidist build",
     "start": "styleguidist server",
     "build": "rollup -c",
     "cover": "npm run test:jest -- --coverage --no-cache",
