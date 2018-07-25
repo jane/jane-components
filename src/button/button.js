@@ -3,12 +3,20 @@ import PropTypes from 'prop-types'
 
 class Button extends Component {
   static defaultProps = {
-    somethingElse: true
+    somethingElse: true,
   }
 
-  render () {
+  render() {
     return (
-      <button onClick={this.props.onClick} style={{backgroundColor: this.props.color, width: this.props.somethingElse ? '100%' : 100}}>{this.props.children}</button>
+      <button
+        onClick={this.props.onClick}
+        style={{
+          backgroundColor: this.props.color,
+          width: this.props.somethingElse ? '100%' : 100,
+        }}
+      >
+        {this.props.children}
+      </button>
     )
   }
 }
@@ -18,7 +26,7 @@ Button.propTypes = {
   backgroundColor: PropTypes.string,
   somethingElse: PropTypes.bool,
   onClick: PropTypes.func,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 export default Button
