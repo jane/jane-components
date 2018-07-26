@@ -2,10 +2,13 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class Input extends Component {
-
-  render () {
+  render() {
     return (
-      <input style={this.props.style} placeholder={this.props.placeholder} onChange={this.props.onChange} />
+      <input
+        style={this.props.style}
+        placeholder={this.props.placeholder}
+        onChange={this.props.onChange}
+      />
     )
   }
 }
@@ -13,7 +16,7 @@ class Input extends Component {
 Input.propTypes = {
   style: PropTypes.Object,
   placeholder: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 }
 
-export default Input 
+export default Input
