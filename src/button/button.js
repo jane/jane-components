@@ -1,32 +1,26 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+// @flow
 
-class Button extends Component {
-  static defaultProps = {
-    somethingElse: true,
-  }
+import * as React from 'react'
+import { ThemeProvider } from 'styled-components'
+import theme from '../theme'
+import StandardButton from './button.styled'
 
-  render() {
-    return (
-      <button
-        onClick={this.props.onClick}
-        style={{
-          backgroundColor: this.props.color,
-          width: this.props.somethingElse ? '100%' : 100,
-        }}
-      >
-        {this.props.children}
-      </button>
-    )
-  }
+export type ButtonProps = {
+  disabled?: boolean,
+  style?: *,
+  submitting?: boolean,
+  testID?: string,
+  type?: string,
 }
 
-Button.propTypes = {
-  /** The backgroundColor prop is how you color the shit you dumbass */
-  backgroundColor: PropTypes.string,
-  somethingElse: PropTypes.bool,
-  onClick: PropTypes.func,
-  children: PropTypes.node,
+const Button = ({ testID, ...props }: ButtonProps): React$Element<*> => {
+  const ButtonComponent = StandardButton
+
+  return (
+    <ThemeProvider theme={theme}>
+      <ButtonComponent data-testid={testID} {...props} />
+    </ThemeProvider>
+  )
 }
 
 export default Button

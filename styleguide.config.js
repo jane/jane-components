@@ -24,31 +24,15 @@ const webpackConfig = {
 }
 
 module.exports = {
-  components: 'src/**/*.js',
+  components: 'src/**/[A-z]*.js',
+  //ignore: [
+  //'src/**/index.js',
+  //],
   webpackConfig,
-  theme: {
-    spaceFactor: 30,
-    color: {
-      border: '#eff4fc',
-      link: '#a3ffec',
-      sidebarBackground: '#192a33',
-    },
-    fontFamily: {
-      // base: '"Oxygen" sans-serif'
-    },
-
-    fontSize: {
-      h1: 40,
-      h2: 36,
-      small: 10,
-      text: 12,
-      base: 11,
-    },
-    sidebarWidth: 230
-  },
+  theme: {},
   styleguideDir: 'docs',
   ribbon: {
     url: 'https://github.com/jane/jane-components',
-    text: 'Contribute on GitHub'
-  }
+    text: 'Contribute on GitHub',
+  },
 }

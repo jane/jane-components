@@ -1,11 +1,17 @@
 ```js
 
+<Button
+  disabled={true}
+  type="destructive"
+>
+  DESTRUCTIVE
+</Button>
+
 
 <Button
-  color="#82CAFF"
-  somethingElse={true}
-  onClick={() => alert('God you ball hard')}
+  disabled={false}
+  type="primary"
 >
-  Ballin Hard
+  BTN
 </Button>
 ```
