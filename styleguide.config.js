@@ -24,10 +24,14 @@ const webpackConfig = {
 }
 
 module.exports = {
-  components: 'src/**/[A-z]*.js',
-  //ignore: [
-  //'src/**/index.js',
-  //],
+  components: 'src/**/*.js',
+  ignore: [
+    '**/index.js',
+    '**/*.styled.js',
+    '**/*.types.js',
+    '**/*.test.js',
+    '**/theme.js',
+  ],
   webpackConfig,
   theme: {},
   styleguideDir: 'docs',
