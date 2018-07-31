@@ -33104,7 +33104,16 @@ object-assign
         },
         {
           required: !1,
-          flowType: { name: 'string' },
+          flowType: {
+            name: 'union',
+            raw: "'primary' | 'secondary' | 'destructive' | 'warning'",
+            elements: [
+              { name: 'literal', value: "'primary'" },
+              { name: 'literal', value: "'secondary'" },
+              { name: 'literal', value: "'destructive'" },
+              { name: 'literal', value: "'warning'" },
+            ],
+          },
           description: '',
           tags: {},
           name: 'type',
@@ -33122,7 +33131,7 @@ object-assign
       {
         type: 'code',
         content:
-          '<Button\n  disabled={true}\n  type="destructive"\n>\n  DESTRUCTIVE\n</Button>\n\n\n<Button\n  disabled={false}\n  type="primary"\n>\n  BTN\n</Button>',
+          '<Button\n  disabled={false}\n  type="primary"\n>\n  BTN\n</Button>',
         settings: {},
         evalInContext: a,
       },
