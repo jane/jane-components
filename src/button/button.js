@@ -10,7 +10,7 @@ export type ButtonProps = {
   style?: *,
   submitting?: boolean,
   testID?: string,
-  type?: string,
+  type?: 'primary' | 'secondary' | 'destructive' | 'warning',
 }
 
 const Button = ({ testID, ...props }: ButtonProps): React$Element<*> => {
