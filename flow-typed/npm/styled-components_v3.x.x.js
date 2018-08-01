@@ -207,7 +207,7 @@ type $npm$styledComponents$WithTheme = $npm$styledComponents$WithThemeReactCompo
   $npm$styledComponents$WithThemeReactComponentFunctionalUndefinedDefaultProps
 
 // ---- MISC ----
-type $npm$styledComponents$Theme = { [key: string]: mixed }
+type $npm$styledComponents$Theme = { +[key: string]: mixed }
 type $npm$styledComponents$ThemeProviderProps = {
   theme:
     | $npm$styledComponents$Theme

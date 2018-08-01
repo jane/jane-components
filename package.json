@@ -20,8 +20,9 @@
     "precommit": "lint-staged && fixpack",
     "preversion": "npm run build",
     "start": "styleguidist server",
-    "test": "run-s -s test:lint test:jest",
+    "test": "run-s -s test:flow test:lint test:jest",
     "test:build": "run-s -s test:lint cover cover:coveralls",
+    "test:flow": "flow check",
     "test:jest": "node config/jest/test.js --env=jsdom",
     "test:lint": "eslint src config *.js",
     "update-types": "flow-typed update-cache && flow-typed install -o -i dev"
