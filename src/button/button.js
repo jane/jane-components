@@ -7,7 +7,7 @@ import StandardButton from './button.styled'
 
 export type ButtonProps = {
   disabled?: boolean,
-  style?: *,
+  style?: {},
   submitting?: boolean,
   testID?: string,
   type?: 'primary' | 'secondary' | 'destructive' | 'warning',

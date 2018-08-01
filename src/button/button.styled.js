@@ -3,6 +3,7 @@
 import styled from 'styled-components'
 import { type ButtonProps } from './button'
 import { type Theme } from '../theme.types'
+import { fromTheme } from '../utils'
 
 type StyledProps = { ...ButtonProps, theme: Theme }
 
@@ -13,7 +14,7 @@ export default styled.button`
   border-width: 0;
   border-radius: 2px;
   box-sizing: border-box;
-  color: ${({ theme }: StyledProps) => `${theme.white}`};
+  color: ${fromTheme('white')};
   cursor: pointer;
   display: flex;
   justify-content: center;
