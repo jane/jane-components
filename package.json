@@ -38,12 +38,7 @@
     "jane-components",
     "react"
   ],
-  "dependencies": {
-    "eslint-plugin-flowtype": "2.50.0",
-    "eslint-plugin-flowtype-errors": "3.6.0",
-    "flow-bin": "0.77.0",
-    "flow-typed": "2.5.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-jest": "23.4.0",
@@ -62,6 +57,8 @@
     "eslint": "5.2.0",
     "eslint-plugin-jane": "0.1.8",
     "fixpack": "2.3.1",
+    "flow-bin": "0.77.0",
+    "flow-typed": "2.5.1",
     "husky": "0.14.3",
     "jest": "23.4.1",
     "jest-styled-components": "5.0.1",
@@ -79,7 +76,7 @@
     "rollup-plugin-node-resolve": "3.3.0",
     "rollup-plugin-peer-deps-external": "2.2.0",
     "styled-components": "3.3.3",
-    "webpack": "4.16.2"
+    "webpack": "4.16.3"
   },
   "engines": {
     "node": ">=8.0.0"

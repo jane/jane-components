@@ -1,9 +1,7 @@
 {
   "root": true,
   "plugins": [
-    "jane",
-    "flowtype",
-    "flowtype-errors"
+    "jane"
   ],
   "extends": [
     "plugin:jane/recommended",

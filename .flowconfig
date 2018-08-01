@@ -3,8 +3,6 @@
 .*/lib/.*
 .*/build/.*
 .*/node_modules/styled-components/.*
-.*/.storybook/.*
-.*/storybook-static/.*
 
 [include]
 
