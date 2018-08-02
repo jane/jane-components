@@ -13,13 +13,19 @@
     "build": "rollup -c",
     "cover": "npm run test:jest -- --coverage --no-cache",
     "cover:coveralls": "if [ -n \"$COVERALLS_REPO_TOKEN\" ] ; then coveralls < coverage/lcov.info ; fi || true",
+    "docs": "styleguidist build",
     "format": "prettier \"{src,config}/**/*.js\" \"*.js\" --write && fixpack",
+    "postbuild": "npm run docs",
     "prebuild": "npm run test:build",
+    "precommit": "lint-staged && fixpack",
     "preversion": "npm run build",
-    "test": "run-s -s test:lint test:jest",
+    "start": "styleguidist server",
+    "test": "run-s -s test:flow test:lint test:jest",
     "test:build": "run-s -s test:lint cover cover:coveralls",
+    "test:flow": "flow check",
     "test:jest": "node config/jest/test.js --env=jsdom",
-    "test:lint": "eslint src config *.js"
+    "test:lint": "eslint src config *.js",
+    "update-types": "flow-typed update-cache && flow-typed install -o -i dev"
   },
   "homepage": "https://jane.github.io/jane-components",
   "repository": {
@@ -37,7 +43,12 @@
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-jest": "23.4.0",
+    "babel-loader": "7.1.5",
+    "babel-plugin-styled-components": "1.5.1",
+    "babel-plugin-styled-name": "2.0.0",
     "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-flow-strip-types": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-2": "6.24.1",
@@ -47,6 +58,8 @@
     "eslint": "5.2.0",
     "eslint-plugin-jane": "0.1.8",
     "fixpack": "2.3.1",
+    "flow-bin": "0.77.0",
+    "flow-typed": "2.5.1",
     "husky": "0.14.3",
     "jest": "23.4.1",
     "jest-styled-components": "5.0.1",
@@ -54,14 +67,17 @@
     "mq-polyfill": "1.1.8",
     "npm-run-all": "4.1.3",
     "prettier": "1.13.7",
+    "prop-types": "15.6.2",
     "react": "16.4.1",
     "react-dom": "16.4.1",
+    "react-styleguidist": "7.1.0",
     "rollup": "0.63.4",
     "rollup-plugin-babel": "3.0.7",
     "rollup-plugin-commonjs": "9.1.3",
     "rollup-plugin-node-resolve": "3.3.0",
     "rollup-plugin-peer-deps-external": "2.2.0",
-    "styled-components": "3.3.3"
+    "styled-components": "3.3.3",
+    "webpack": "4.16.3"
   },
   "engines": {
     "node": ">=8.0.0"
