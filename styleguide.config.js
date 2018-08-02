@@ -31,6 +31,7 @@ module.exports = {
     '**/*.types.js',
     '**/*.test.js',
     '**/theme.js',
+    '**/utils.js',
   ],
   webpackConfig,
   theme: {},
