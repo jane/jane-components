@@ -10,8 +10,8 @@ export const colors = {
   errorDarker: '#A60F28',
   warning: '#F5941C',
   warningDarker: '#DB8419',
-  sneakpeaks: '#7941F1',
-  sneakpeaksDarker: '#6D3AD9',
+  sneakpeeks: '#7941F1',
+  sneakpeeksDarker: '#6D3AD9',
   alt: '#54B1CC',
   altDarker: '#429FBA',
   //there are the whites and grays, not sure what to name them
@@ -31,8 +31,8 @@ export const buttonTypes = {
   destructiveDarker: colors.errorDarker,
   warning: colors.warning,
   warningDarker: colors.warningDarker,
-  sneakpeaks: colors.sneakpeaks,
-  sneakpeaksDarker: colors.sneakpeaksDarker,
+  sneakpeeks: colors.sneakpeeks,
+  sneakpeeksDarker: colors.sneakpeeksDarker,
   alt: colors.alt,
   altDarker: colors.altDarker,
 }
