@@ -32886,29 +32886,53 @@ object-assign
   function(e, t, n) {
     'use strict'
     Object.defineProperty(t, '__esModule', { value: !0 })
-    var r = (Object.assign ||
-      function(e) {
-        for (var t = 1; t < arguments.length; t++) {
-          var n = arguments[t]
-          for (var r in n)
-            Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
-        }
-        return e
-      })(
-      {},
-      (t.newThemeColors = {
+    var r =
+        Object.assign ||
+        function(e) {
+          for (var t = 1; t < arguments.length; t++) {
+            var n = arguments[t]
+            for (var r in n)
+              Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
+          }
+          return e
+        },
+      i = (t.colors = {
+        action: '#042A70',
+        actionDarker: '#032057',
+        attention: '#13A399',
+        attentionDarker: '#108A81',
+        error: '#BF112E',
+        errorDarker: '#A60F28',
+        warning: '#F5941C',
+        warningDarker: '#DB8419',
+        sneakpeeks: '#7941F1',
+        sneakpeeksDarker: '#6D3AD9',
+        alt: '#54B1CC',
+        altDarker: '#429FBA',
         white: '#ffffff',
-        primary: '#042A70',
-        primaryDarker: '#032057',
-        secondary: '#F3F3F3',
-        secondaryDarker: '#E0E0E0',
-        destructive: '#13A399',
-        destructiveDarker: '#108A81',
-        warning: '#F6BB43',
-        warningDarker: '#E4A931',
-      })
-    )
-    t.default = r
+        f3: '#F3F3F3',
+        e0: '#E0E0E0',
+      }),
+      a = r(
+        {
+          buttonTypes: (t.buttonTypes = {
+            primary: i.action,
+            primaryDarker: i.actionDarker,
+            secondary: i.f3,
+            secondaryDarker: i.e0,
+            destructive: i.error,
+            destructiveDarker: i.errorDarker,
+            warning: i.warning,
+            warningDarker: i.warningDarker,
+            sneakpeeks: i.sneakpeeks,
+            sneakpeeksDarker: i.sneakpeeksDarker,
+            alt: i.alt,
+            altDarker: i.altDarker,
+          }),
+        },
+        i
+      )
+    t.default = a
   },
   function(e, t, n) {
     'use strict'
@@ -32932,13 +32956,13 @@ object-assign
       function(e) {
         var t = e.theme,
           n = e.type
-        return n ? t[n] : ''
+        return n ? t.buttonTypes[n] : ''
       },
       (0, i.fromTheme)('white'),
       function(e) {
         var t = e.type,
           n = e.theme
-        return t ? '0 0 0 4px ' + n[t] : ''
+        return t ? '0 0 0 4px ' + n.buttonTypes[t] : ''
       },
       function(e) {
         return e.disabled ? 0.4 : 1
@@ -32946,17 +32970,17 @@ object-assign
       function(e) {
         var t = e.theme,
           n = e.type
-        return n ? t[n + 'Darker'] : ''
+        return n ? t.buttonTypes[n + 'Darker'] : ''
       },
       function(e) {
         var t = e.type,
           n = e.theme
-        return t ? '0 0 0 4px ' + n[t + 'Darker'] : ''
+        return t ? '0 0 0 4px ' + n.buttonTypes[t + 'Darker'] : ''
       },
       function(e) {
         var t = e.type,
           n = e.theme
-        return t ? '0 0 0 2px ' + n[t + 'Darker'] : ''
+        return t ? '0 0 0 2px ' + n.buttonTypes[t + 'Darker'] : ''
       }
     )
   },
