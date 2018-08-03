@@ -20,6 +20,7 @@ export const colors = {
   white: '#ffffff',
   f3: '#F3F3F3',
   e0: '#E0E0E0',
+  c: '#cccccc',
 }
 
 export const buttonTypes = {
