@@ -6,7 +6,7 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
-import breakpoints from './create-breakpoints'
+import breakpoints from '../utils/create-breakpoints'
 
 const GUTTERS = [0, 8, 16, 24, 32, 40]
 export type Gutters = 0 | 8 | 16 | 24 | 32 | 40
