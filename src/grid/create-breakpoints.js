@@ -1,75 +1,71 @@
 // @flow
 
+// adapted from https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/styles/createBreakpoints.js
+
 // Sorted ASC by size. That's important.
 // It can't be configured as it's used statically for propTypes.
-export type BreakpointKey = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-export const keys: Array<BreakpointKey> = ['xs', 'sm', 'md', 'lg', 'xl']
+export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+const keys: Array<Breakpoint> = ['xs', 'sm', 'md', 'lg', 'xl']
 
-// Keep in mind that @media is inclusive by the CSS specification.
-export default function createBreakpoints(breakpoints) {
-  const {
-    // The breakpoint **start** at this value.
-    // For instance with the first breakpoint xs: [xs, sm[.
-    values = {
-      xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1920,
-    },
-    unit = 'px',
-    step = 5,
-    ...other
-  } = breakpoints
+type Values = { [Breakpoint]: number }
 
-  function up(key) {
-    const value = typeof values[key] === 'number' ? values[key] : key
-    return `@media (min-width:${value}${unit})`
+const values: Values = {
+  xs: 0,
+  sm: 600,
+  md: 960,
+  lg: 1280,
+  xl: 1920,
+}
+const unit: string = 'px'
+const step: number = 5
+
+const up = (key: Breakpoint): string => {
+  const value = typeof values[key] === 'number' ? values[key] : key
+  return `@media (min-width:${value}${unit})`
+}
+
+const down = (key: Breakpoint): string => {
+  const endIndex = keys.indexOf(key) + 1
+  const upperbound = values[keys[endIndex]]
+
+  if (endIndex === keys.length) {
+    // xl down applies to all sizes
+    return up('xs')
   }
 
-  function down(key) {
-    const endIndex = keys.indexOf(key) + 1
-    const upperbound = values[keys[endIndex]]
+  const value =
+    typeof upperbound === 'number' && endIndex > 0 ? upperbound : key
 
-    if (endIndex === keys.length) {
-      // xl down applies to all sizes
-      return up('xs')
-    }
+  return `@media (max-width:${value - step / 100}${unit})`
+}
 
-    const value =
-      typeof upperbound === 'number' && endIndex > 0 ? upperbound : key
-    return `@media (max-width:${value - step / 100}${unit})`
+const between = (start: Breakpoint, end: Breakpoint): string => {
+  const endIndex = keys.indexOf(end) + 1
+
+  if (endIndex === keys.length) {
+    return up(start)
   }
 
-  function between(start, end) {
-    const endIndex = keys.indexOf(end) + 1
+  return (
+    `@media (min-width:${values[start]}${unit}) and ` +
+    `(max-width:${values[keys[endIndex]] - step / 100}${unit})`
+  )
+}
 
-    if (endIndex === keys.length) {
-      return up(start)
-    }
+const only = (key: Breakpoint): string => {
+  return between(key, key)
+}
 
-    return (
-      `@media (min-width:${values[start]}${unit}) and ` +
-      `(max-width:${values[keys[endIndex]] - step / 100}${unit})`
-    )
-  }
+const width = (key: Breakpoint): number => {
+  return values[key]
+}
 
-  function only(key) {
-    return between(key, key)
-  }
-
-  function width(key) {
-    return values[key]
-  }
-
-  return {
-    keys,
-    values,
-    up,
-    down,
-    between,
-    only,
-    width,
-    ...other,
-  }
+export default {
+  keys,
+  values,
+  up,
+  down,
+  between,
+  only,
+  width,
 }

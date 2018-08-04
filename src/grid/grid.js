@@ -6,15 +6,13 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
-import { default as createBreakpoints } from './create-breakpoints'
-
-const breakpoints = createBreakpoints({})
+import breakpoints from './create-breakpoints'
 
 const GUTTERS = [0, 8, 16, 24, 32, 40]
-type Gutters = 0 | 8 | 16 | 24 | 32 | 40
+export type Gutters = 0 | 8 | 16 | 24 | 32 | 40
 
 const GRID_SIZES = ['auto', true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-type GridSizes =
+export type GridSizes =
   | 'auto'
   | true
   | 1
@@ -86,17 +84,17 @@ export type GridProps = {
    * Defines the number of grids the component is going to use.
    * It's applied for the `lg` breakpoint and wider screens if not overridden.
    */
-  lg: GridSizes,
+  lg?: GridSizes,
   /**
    * Defines the number of grids the component is going to use.
    * It's applied for the `md` breakpoint and wider screens if not overridden.
    */
-  md: GridSizes,
+  md?: GridSizes,
   /**
    * Defines the number of grids the component is going to use.
    * It's applied for the `sm` breakpoint and wider screens if not overridden.
    */
-  sm: GridSizes,
+  sm?: GridSizes,
   /**
    * Defines the space between the type `item` component.
    * It can only be used on a type `container` component.
@@ -111,12 +109,12 @@ export type GridProps = {
    * Defines the number of grids the component is going to use.
    * It's applied for the `xl` breakpoint and wider screens.
    */
-  xl: GridSizes,
+  xl?: GridSizes,
   /**
    * Defines the number of grids the component is going to use.
    * It's applied for all the screen sizes with the lowest priority.
    */
-  xs: GridSizes,
+  xs?: GridSizes,
   /**
    * If `true`, it sets `min-width: 0` on the item.
    * Refer to the limitations section of the documentation to better understand the use case.
@@ -124,6 +122,9 @@ export type GridProps = {
   zeroMinWidth: boolean,
 }
 
+/**
+ * Generates a style object for each gridSize (0 - 12)
+ */
 const generateGrid = (): * => {
   const styles = {}
   GRID_SIZES.forEach(
@@ -154,6 +155,9 @@ const generateGrid = (): * => {
 
 const generatedGrid = generateGrid()
 
+/**
+ * Generates a gutter styles object for the given spacing prop
+ */
 const generateGutter = (): * => {
   const styles = {}
 
@@ -191,6 +195,8 @@ const generateCSS = ({
   lg,
   xl,
 }: GridProps): string => `
+flex: '0 1 auto';
+display: flex;
 ${
   container /* Styles applied to the root element if `container={true}`. */
     ? `
@@ -201,7 +207,6 @@ ${
   `
     : ''
 }
-
 ${
   item /* Styles applied to the root element if `item={true}`. */
     ? `
@@ -210,7 +215,6 @@ ${
   `
     : ''
 }
-
 ${
   zeroMinWidth /* Styles applied to the root element if `zeroMinWidth={true}`. */
     ? `
@@ -218,7 +222,6 @@ ${
   `
     : ''
 }
-
 ${
   direction /* flex-direction styles applied to the root element. */
     ? `
@@ -226,7 +229,6 @@ ${
   `
     : ''
 }
-
 ${
   wrap === 'nowrap' /* Styles applied to the root element if `wrap="nowrap"`. */
     ? `
@@ -245,11 +247,10 @@ ${
 ${
   alignItems /* align-items styles applied to the root element */
     ? `
-  align-items: ${alignItems}
+  align-items: ${alignItems};
   `
     : ''
 }
-
 ${
   alignContent /* align-content styles applied to the root element */
     ? `
@@ -257,15 +258,13 @@ ${
   `
     : ''
 }
-
 ${
   justify /* justify-content styles applied to the root element */
     ? `
-  justify-content: ${justify}
+  justify-content: ${justify};
   `
     : ''
 }
-
 ${container && spacing !== 0 ? generatedGutters[spacing] : ''}
 ${xs ? `${breakpoints.up('xs')} { ${generatedGrid[String(xs)]}}` : ''}
 ${sm ? `${breakpoints.up('sm')} { ${generatedGrid[String(sm)]}}` : ''}
@@ -274,10 +273,7 @@ ${lg ? `${breakpoints.up('lg')} { ${generatedGrid[String(lg)]}}` : ''}
 ${xl ? `${breakpoints.up('xl')} { ${generatedGrid[String(xl)]}}` : ''}
 `
 const Grid = styled.div`
-  ${(props: GridProps): string => {
-    // console.log(generateCSS(props))
-    return generateCSS(props)
-  }};
+  ${(props: GridProps): string => generateCSS(props)};
 `
 
 export default Grid
