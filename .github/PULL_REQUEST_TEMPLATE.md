@@ -10,12 +10,7 @@
 * [ ] minor
 * [ ] patch
 
-## Further Information (screenshots, etc)
+## Further Information (screenshots, links, etc)
 
-#### Relevant Links (Task Link, etc)
-
-## Checklist
-
-* [ ] Added tests / Task did not decrease code coverage
-* [ ] If UI change, tested across supported browsers
-* [ ] Documented manual test cases, if applicable
+<~~ If this PR closes an issue, please use `Resolves #[issue number]` to
+automatically close the related issue. -->
