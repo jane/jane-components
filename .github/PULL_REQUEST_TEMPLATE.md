@@ -12,5 +12,5 @@
 
 ## Further Information (screenshots, links, etc)
 
-<~~ If this PR closes an issue, please use `Resolves #[issue number]` to
+<!-- If this PR closes an issue, please use `Resolves #[issue number]` to
 automatically close the related issue. -->

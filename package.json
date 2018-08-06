@@ -4,18 +4,22 @@
   "version": "0.0.2",
   "author": "Jane web team",
   "license": "MIT",
-  "main": "lib/index.js",
-  "module": "lib/index.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "run-p -s build:*",
+    "build:babel": "babel --ignore \"src/**/*.test.js\" src/ -d lib/",
+    "build:rollup": "rollup -c",
+    "copy-flow": "flow-copy-source src lib",
     "cover": "npm run test:jest -- --coverage --no-cache",
     "cover:coveralls": "if [ -n \"$COVERALLS_REPO_TOKEN\" ] ; then coveralls < coverage/lcov.info ; fi || true",
     "docs": "styleguidist build",
     "format": "prettier \"{src,config}/**/*.js\" \"*.js\" --write && fixpack",
-    "postbuild": "npm run docs",
+    "postbuild": "run-p -s docs copy-flow",
     "prebuild": "npm run test:build",
     "precommit": "lint-staged && fixpack",
     "preversion": "npm run build",
@@ -41,6 +45,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-jest": "23.4.0",
     "babel-loader": "7.1.5",
@@ -59,6 +64,7 @@
     "eslint-plugin-jane": "0.1.8",
     "fixpack": "2.3.1",
     "flow-bin": "0.77.0",
+    "flow-copy-source": "2.0.2",
     "flow-typed": "2.5.1",
     "husky": "0.14.3",
     "jest": "23.4.1",
@@ -97,7 +103,7 @@
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
-      "^.+\\.js$": "<rootDir>/config/jest/transform.js",
+      "^.+\\.js$": "babel-jest",
       "^(?!.*\\.(js|json)$)": "<rootDir>/config/jest/file-transform.js"
     },
     "transformIgnorePatterns": [
@@ -109,9 +115,16 @@
     ]
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
+    "linters": {
+      "*.js": [
+        "prettier --write",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "dist/*.js",
+      "lib/**/*.js",
+      "docs/*.js"
     ]
   },
   "optionalDependencies": {
