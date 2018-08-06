@@ -1,30 +1,14 @@
 ```js
-class TheSwitch extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      checked: false,
-    }
-    this.onClickSwitch = this.onClickSwitch.bind(this)
-  }
-  onClickSwitch() {
-    this.setState({ checked: !this.state.checked })
-  }
-  render() {
-    return (
+initialState = {checked: false}
+;<div style={{ display: 'flex'}}>
       <Switch
         disabled={false}
         input={{
-          value: this.state.checked,
+          value: state.checked,
           onChange: () => {},
-          onClick: this.onClickSwitch,
+          onClick: () => setState((prevState) => ({ checked: !prevState.checked })),
         }}
-        checked={this.state.checked}
+        checked={state.checked}
       />
-    )
-  }
-};
-<div style={{display: 'flex'}}>
-<TheSwitch/>
-</div>
+      </div>
 ```

@@ -2,14 +2,18 @@
 
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { type Theme } from '../theme'
+import { type Theme } from '../theme.types'
 import { fromTheme } from '../utils'
 
 // TODO: Add conditional passing of backgroundColor(s)
 
 const SwitchBox = styled.label`
   background-color: ${({ disabled, checked }: SwitchProps) =>
-    disabled ? '#e0e0e0' : checked ? '#042A70' : '#e0e0e0'};
+    disabled
+      ? fromTheme('e0')
+      : checked
+        ? fromTheme('action')
+        : fromTheme('e0')};
   border-radius: 24px;
   color: white;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
@@ -22,7 +26,11 @@ const SwitchBox = styled.label`
   ${({ disabled }) => (disabled ? '' : 'opacity: 40%')};
   &:hover {
     background-color: ${({ disabled, checked }: SwitchProps) =>
-      disabled ? '#ccc' : checked ? '#032057' : '#ccc'};
+      disabled
+        ? fromTheme('c')
+        : checked
+          ? fromTheme('acitonDarker')
+          : fromTheme('c')};
   }
 `
 

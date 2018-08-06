@@ -3,7 +3,8 @@
 import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
 import theme from '../theme'
-import Switch from './switch.styled'
+import { type Theme } from '../theme.types'
+import SwitchComponent from './switch.styled'
 
 export type SwitchProps = {
   backgroundColor?: string,
@@ -18,14 +19,10 @@ export type SwitchProps = {
   testID?: string,
 } & Theme
 
-const Button = ({ testID, ...props }: SwitchProps): React$Element<*> => {
-  const SwitchComponent = Switch
-
-  return (
-    <ThemeProvider theme={theme}>
-      <SwitchComponent data-testid={testID} {...props} />
-    </ThemeProvider>
-  )
-}
+const Switch = ({ testID, ...props }: SwitchProps): React$Element<*> => (
+  <ThemeProvider theme={theme}>
+    <SwitchComponent data-testid={testID} {...props} />
+  </ThemeProvider>
+)
 
 export default Switch
