@@ -125,7 +125,7 @@ export type GridProps = {
 /**
  * Generates a style object for each gridSize (0 - 12)
  */
-const generateGrid = (): * => {
+const generateGrid = (): { [GridSizes]: string } => {
   const styles = {}
   GRID_SIZES.forEach(
     (gridSize: GridSizes): void => {
@@ -158,12 +158,12 @@ const generatedGrid = generateGrid()
 /**
  * Generates a gutter styles object for the given spacing prop
  */
-const generateGutter = (): * => {
+const generateGutter = (): { [Gutters]: string } => {
   const styles = {}
 
   GUTTERS.forEach(
-    (spacing: Gutters, index: number): void => {
-      if (index === 0) {
+    (spacing: Gutters): void => {
+      if (spacing === 0) {
         // Skip the default style.
         return
       }
