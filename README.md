@@ -4,7 +4,7 @@
 
 [Documentation](https://jane.github.io/jane-components)
 
-[![npm version](https://img.shields.io/npm/v/jane-components.svg)](https://npm.im/jane-components) [![CircleCI](https://circleci.com/gh/jane/jane-components.svg?style=svg)](https://circleci.com/gh/jane/jane-components) [![Coverage Status](https://coveralls.io/repos/github/jane/jane-components/badge.svg?t=yuKtUx)](https://coveralls.io/github/jane/jane-components)[![Known Vulnerabilities](https://snyk.io/test/github/jane/jane-components/badge.svg)](https://snyk.io/test/github/jane/jane-components)
+[![npm version](https://img.shields.io/npm/v/jane-components.svg)](https://npm.im/jane-components) [![CircleCI](https://circleci.com/gh/jane/jane-components.svg?style=svg)](https://circleci.com/gh/jane/jane-components) [![Coverage Status](https://coveralls.io/repos/github/jane/jane-components/badge.svg?t=yuKtUx)](https://coveralls.io/github/jane/jane-components) [![Known Vulnerabilities](https://snyk.io/test/github/jane/jane-components/badge.svg)](https://snyk.io/test/github/jane/jane-components)
 
 --------
 
