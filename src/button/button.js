@@ -10,6 +10,7 @@ export type ButtonProps = {
   style?: {},
   submitting?: boolean,
   testID?: string,
+  onClick?: () => void,
   type?: 'primary' | 'secondary' | 'destructive' | 'warning',
 }
 
