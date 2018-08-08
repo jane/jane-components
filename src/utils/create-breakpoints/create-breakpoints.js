@@ -35,7 +35,7 @@ const down = (key: Breakpoint): string => {
 
   const value = typeof upperbound === 'number' && endIndex > 0 ? upperbound : 0
 
-  return `@media (max-width:${value - step / 100}${unit})`
+  return `@media (max-width:${value}${unit})`
 }
 
 const between = (start: Breakpoint, end: Breakpoint): string => {
@@ -47,7 +47,7 @@ const between = (start: Breakpoint, end: Breakpoint): string => {
 
   return (
     `@media (min-width:${values[start]}${unit}) and ` +
-    `(max-width:${values[keys[endIndex]] - step / 100}${unit})`
+    `(max-width:${values[keys[endIndex]]}${unit})`
   )
 }
 
