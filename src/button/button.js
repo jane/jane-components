@@ -10,6 +10,7 @@ export type ButtonProps = {
   testID?: string,
   onClick?: () => void,
   type?: 'primary' | 'secondary' | 'destructive' | 'warning',
+  fullWidth?: boolean,
 }
 
 const Button = ({ testID, ...props }: ButtonProps): React$Element<*> => {

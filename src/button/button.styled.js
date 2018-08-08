@@ -25,10 +25,11 @@ export default styled.button`
     type ? `0 0 0 4px ${theme.buttonTypes[type]}` : ''};
   position: relative;
   text-decoration: none;
-  margin: 8px;
+  margin: 4px;
   overflow: hidden;
   opacity: ${({ disabled }: StyledProps) => (disabled ? 0.4 : 1)};
   text-transform: uppercase;
+  width: ${({ fullWidth }: StyledProps) => (fullWidth ? '100%' : null)};
   &:hover,
   &:focus,
   &:active {
