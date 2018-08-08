@@ -33,8 +33,7 @@ const down = (key: Breakpoint): string => {
     return up('xs')
   }
 
-  const value =
-    typeof upperbound === 'number' && endIndex > 0 ? upperbound : key
+  const value = typeof upperbound === 'number' && endIndex > 0 ? upperbound : 0
 
   return `@media (max-width:${value - step / 100}${unit})`
 }
@@ -52,13 +51,8 @@ const between = (start: Breakpoint, end: Breakpoint): string => {
   )
 }
 
-const only = (key: Breakpoint): string => {
-  return between(key, key)
-}
-
-const width = (key: Breakpoint): number => {
-  return values[key]
-}
+const only = (key: Breakpoint): string => between(key, key)
+const width = (key: Breakpoint): number => values[key]
 
 export default {
   keys,

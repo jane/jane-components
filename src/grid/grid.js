@@ -33,7 +33,7 @@ export type GridProps = {
    * Defines the `align-content` style property.
    * It's applied for all screen sizes.
    */
-  alignContent:
+  alignContent:  // eslint-disable-line
     | 'stretch'
     | 'center'
     | 'flex-start'
@@ -73,7 +73,7 @@ export type GridProps = {
    * Defines the `justify-content` style property.
    * It is applied for all screen sizes.
    */
-  justify:
+  justify:  // eslint-disable-line
     | 'flex-start'
     | 'center'
     | 'flex-end'
@@ -266,11 +266,11 @@ ${
     : ''
 }
 ${container && spacing !== 0 ? generatedGutters[spacing] : ''}
-${xs ? `${breakpoints.up('xs')} { ${generatedGrid[String(xs)]}}` : ''}
-${sm ? `${breakpoints.up('sm')} { ${generatedGrid[String(sm)]}}` : ''}
-${md ? `${breakpoints.up('md')} { ${generatedGrid[String(md)]}}` : ''}
-${lg ? `${breakpoints.up('lg')} { ${generatedGrid[String(lg)]}}` : ''}
-${xl ? `${breakpoints.up('xl')} { ${generatedGrid[String(xl)]}}` : ''}
+${xs ? `${breakpoints.up('xs')} { ${generatedGrid[xs]}}` : ''}
+${sm ? `${breakpoints.up('sm')} { ${generatedGrid[sm]}}` : ''}
+${md ? `${breakpoints.up('md')} { ${generatedGrid[md]}}` : ''}
+${lg ? `${breakpoints.up('lg')} { ${generatedGrid[lg]}}` : ''}
+${xl ? `${breakpoints.up('xl')} { ${generatedGrid[xl]}}` : ''}
 `
 const Grid = styled.div`
   ${(props: GridProps): string => generateCSS(props)};
