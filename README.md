@@ -14,6 +14,26 @@
 
 You can also install this library and its peerDependencies with `npx install-peerdeps jane-components`.
 
+## Usage
+
+You can import the whole component library, or use named imports:
+
+```javascript
+import * as Components from 'jane-components'
+// use Components.Button, etc.
+import { Button } from 'jane-components'
+// use Button
+```
+
+You can also import from individual files, which helps with tree-shaking:
+
+```javascript
+import Button from 'jane-components/lib/button'
+// use Button
+```
+
+For component documentation, see the [docs site](https://jane.github.io/jane-components).
+
 ## License
 
 [MIT](./LICENSE.md)
