@@ -1,1 +1,1 @@
-export { default as Span } from './span'
+export { default as Button } from './button'
