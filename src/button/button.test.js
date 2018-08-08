@@ -15,6 +15,8 @@ describe('button', () => {
         <i />
       </Button>
     )
+
+    expect(typeof button.prop('onClick')).toBe('function')
     button.simulate('click')
     expect(handleClick).toHaveBeenCalled()
   })
