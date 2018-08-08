@@ -13,7 +13,7 @@
       'build/' +
       ({}[e] || e) +
       '.' +
-      { 1: '5a674ac2' }[e] +
+      { 1: '06d4f297' }[e] +
       '.js'
     )
   }
@@ -120,14 +120,14 @@
   ;(r.push = webpackJsonpCallback), (r = r.slice())
   for (var a = 0; a < r.length; a++) webpackJsonpCallback(r[a])
   var o = i
-  __webpack_require__((__webpack_require__.s = 136))
+  __webpack_require__((__webpack_require__.s = 134))
 })([
   function(e, t, n) {
-    e.exports = n(173)()
+    e.exports = n(171)()
   },
   function(e, t, n) {
     'use strict'
-    e.exports = n(166)
+    e.exports = n(164)
   },
   function(e, t, n) {
     'use strict'
@@ -383,7 +383,7 @@
       i = n.n(r),
       a = n(1),
       o = n.n(a),
-      s = n(119),
+      s = n(116),
       l = n.n(s),
       u =
         Object.assign ||
@@ -1245,7 +1245,7 @@
     }
     var xe = n(42),
       Se = n(10),
-      we = n(23),
+      we = n(21),
       ke = n(2),
       Ee = n(20)
     function MarkdownHeadingRenderer(e) {
@@ -1501,7 +1501,7 @@
           }
           return e
         }
-    n(237)
+    n(235)
     var We = {
         a: { component: xe.a },
         h1: { component: Ce, props: { level: 1 } },
@@ -1787,8 +1787,8 @@
     })
   },
   function(e, t, n) {
-    var r = n(186),
-      i = n(191)
+    var r = n(184),
+      i = n(189)
     e.exports = function getNative(e, t) {
       var n = i(e, t)
       return r(n) ? n : void 0
@@ -1796,8 +1796,8 @@
   },
   function(e, t, n) {
     var r = n(33),
-      i = n(187),
-      a = n(188),
+      i = n(185),
+      a = n(186),
       o = '[object Null]',
       s = '[object Undefined]',
       l = r ? r.toStringTag : void 0
@@ -2099,68 +2099,37 @@
       i = n.n(r),
       a = n(0),
       o = n.n(a),
-      s = n(4),
-      l = n(120),
-      u = n.n(l),
-      c = function plural(e, t) {
-        return 1 === e.length ? t : t + 's'
-      },
-      p = function list(e) {
-        return e
-          .map(function(e) {
-            return e.description
-          })
-          .join(', ')
-      },
-      f = function paragraphs(e) {
-        return e
-          .map(function(e) {
-            return e.description
-          })
-          .join('\n\n')
-      },
-      h = {
-        deprecated: function deprecated(e) {
-          return '**Deprecated:** ' + e[0].description
-        },
-        see: function see(e) {
-          return f(e)
-        },
-        link: function link(e) {
-          return f(e)
-        },
-        author: function author(e) {
-          return c(e, 'Author') + ': ' + p(e)
-        },
-        version: function version(e) {
-          return 'Version: ' + e[0].description
-        },
-        since: function since(e) {
-          return 'Since: ' + e[0].description
+      s = n(2)
+    function ParaRenderer(e) {
+      var t = e.classes,
+        n = e.semantic,
+        r = e.children,
+        a = n || 'div'
+      return i.a.createElement(a, { className: t.para }, r)
+    }
+    ParaRenderer.propTypes = {
+      classes: o.a.object.isRequired,
+      semantic: o.a.oneOf(['p']),
+      children: o.a.node.isRequired,
+    }
+    var l = Object(s.a)(function styles(e) {
+      var t = e.space,
+        n = e.color,
+        r = e.fontFamily
+      return {
+        para: {
+          marginTop: 0,
+          marginBottom: t[2],
+          color: n.base,
+          fontFamily: r.base,
+          fontSize: 'inherit',
+          lineHeight: 1.5,
         },
       }
-    function getMarkdown(e) {
-      return u()(h, function(t, n) {
-        return e[n] && t(e[n])
-      })
-        .filter(Boolean)
-        .join('\n\n')
-    }
-    function JsDoc(e) {
-      var t = getMarkdown(e)
-      return t ? i.a.createElement(s.a, { text: t }) : null
-    }
-    ;(JsDoc.propTypes = {
-      deprecated: o.a.array,
-      see: o.a.array,
-      link: o.a.array,
-      author: o.a.array,
-      version: o.a.array,
-      since: o.a.array,
-    }),
-      n.d(t, 'a', function() {
-        return JsDoc
-      })
+    })(ParaRenderer)
+    n.d(t, 'a', function() {
+      return l
+    })
   },
   function(e, t, n) {
     'use strict'
@@ -2243,37 +2212,68 @@
       i = n.n(r),
       a = n(0),
       o = n.n(a),
-      s = n(2)
-    function ParaRenderer(e) {
-      var t = e.classes,
-        n = e.semantic,
-        r = e.children,
-        a = n || 'div'
-      return i.a.createElement(a, { className: t.para }, r)
-    }
-    ParaRenderer.propTypes = {
-      classes: o.a.object.isRequired,
-      semantic: o.a.oneOf(['p']),
-      children: o.a.node.isRequired,
-    }
-    var l = Object(s.a)(function styles(e) {
-      var t = e.space,
-        n = e.color,
-        r = e.fontFamily
-      return {
-        para: {
-          marginTop: 0,
-          marginBottom: t[2],
-          color: n.base,
-          fontFamily: r.base,
-          fontSize: 'inherit',
-          lineHeight: 1.5,
+      s = n(4),
+      l = n(117),
+      u = n.n(l),
+      c = function plural(e, t) {
+        return 1 === e.length ? t : t + 's'
+      },
+      p = function list(e) {
+        return e
+          .map(function(e) {
+            return e.description
+          })
+          .join(', ')
+      },
+      f = function paragraphs(e) {
+        return e
+          .map(function(e) {
+            return e.description
+          })
+          .join('\n\n')
+      },
+      h = {
+        deprecated: function deprecated(e) {
+          return '**Deprecated:** ' + e[0].description
+        },
+        see: function see(e) {
+          return f(e)
+        },
+        link: function link(e) {
+          return f(e)
+        },
+        author: function author(e) {
+          return c(e, 'Author') + ': ' + p(e)
+        },
+        version: function version(e) {
+          return 'Version: ' + e[0].description
+        },
+        since: function since(e) {
+          return 'Since: ' + e[0].description
         },
       }
-    })(ParaRenderer)
-    n.d(t, 'a', function() {
-      return l
-    })
+    function getMarkdown(e) {
+      return u()(h, function(t, n) {
+        return e[n] && t(e[n])
+      })
+        .filter(Boolean)
+        .join('\n\n')
+    }
+    function JsDoc(e) {
+      var t = getMarkdown(e)
+      return t ? i.a.createElement(s.a, { text: t }) : null
+    }
+    ;(JsDoc.propTypes = {
+      deprecated: o.a.array,
+      see: o.a.array,
+      link: o.a.array,
+      author: o.a.array,
+      version: o.a.array,
+      since: o.a.array,
+    }),
+      n.d(t, 'a', function() {
+        return JsDoc
+      })
   },
   function(e, t, n) {
     'use strict'
@@ -2309,7 +2309,7 @@
       a = _interopRequireDefault(n(30)),
       o = _interopRequireDefault(n(75)),
       s = _interopRequireDefault(n(19)),
-      l = _interopRequireDefault(n(146))
+      l = _interopRequireDefault(n(144))
     function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -2462,17 +2462,17 @@
   function(e, t, n) {
     'use strict'
     var r = n(64),
-      i = n(112),
+      i = n(109),
       a = n.n(i),
-      o = n(113),
+      o = n(110),
       s = n.n(o),
-      l = n(114),
+      l = n(111),
       u = n.n(l),
-      c = n(115),
+      c = n(112),
       p = n.n(c),
-      f = n(116),
+      f = n(113),
       h = n.n(f),
-      d = n(117),
+      d = n(114),
       m = n.n(d),
       g =
         Object.assign ||
@@ -2584,7 +2584,7 @@
           console.error(e)
         }
     })(),
-      (e.exports = n(165))
+      (e.exports = n(163))
   },
   function(e, t, n) {
     var r = n(1),
@@ -2659,17 +2659,17 @@
       })
     var r = _interopRequireDefault(n(12)),
       i = _interopRequireDefault(n(19)),
-      a = _interopRequireDefault(n(144))
+      a = _interopRequireDefault(n(142))
     function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
     }
   },
   function(e, t, n) {
-    var r = n(176),
-      i = n(177),
-      a = n(178),
-      o = n(179),
-      s = n(180)
+    var r = n(174),
+      i = n(175),
+      a = n(176),
+      o = n(177),
+      s = n(178)
     function ListCache(e) {
       var t = -1,
         n = null == e ? 0 : e.length
@@ -2701,7 +2701,7 @@
     e.exports = r
   },
   function(e, t, n) {
-    var r = n(200)
+    var r = n(198)
     e.exports = function getMapData(e, t) {
       var n = e.__data__
       return r(t) ? n['string' == typeof t ? 'string' : 'hash'] : n.map
@@ -2709,7 +2709,7 @@
   },
   function(e, t, n) {
     var r = n(92),
-      i = n(258),
+      i = n(256),
       a = n(17)
     e.exports = function keys(e) {
       return a(e) ? r(e) : i(e)
@@ -7754,7 +7754,7 @@
     }
   },
   function(e, t, n) {
-    var r = n(281)(n(282))
+    var r = n(282)(n(283))
     e.exports = r
   },
   function(e, t) {
@@ -7828,6 +7828,67 @@
         },
       }
     })(LinkRenderer)
+    n.d(t, 'a', function() {
+      return p
+    })
+  },
+  function(e, t, n) {
+    'use strict'
+    var r = n(1),
+      i = n.n(r),
+      a = n(0),
+      o = n.n(a),
+      s = n(22),
+      l = n(20),
+      u = n(2),
+      c =
+        Object.assign ||
+        function(e) {
+          for (var t = 1; t < arguments.length; t++) {
+            var n = arguments[t]
+            for (var r in n)
+              Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
+          }
+          return e
+        }
+    function ArgumentsRenderer(e) {
+      var t = e.classes,
+        n = e.args,
+        r = e.heading
+      return 0 === n.length
+        ? null
+        : i.a.createElement(
+            'div',
+            { className: t.root },
+            r &&
+              i.a.createElement(
+                'div',
+                { className: t.headingWrapper },
+                i.a.createElement(l.a, { level: 5 }, 'Arguments')
+              ),
+            n.map(function(e) {
+              return i.a.createElement(s.a, c({ key: e.name }, e))
+            })
+          )
+    }
+    ArgumentsRenderer.propTypes = {
+      classes: o.a.object.isRequired,
+      args: o.a.arrayOf(
+        o.a.shape({
+          name: o.a.string.isRequired,
+          type: o.a.object,
+          description: o.a.string,
+        })
+      ).isRequired,
+      heading: o.a.bool,
+    }
+    var p = Object(u.a)(function styles(e) {
+      var t = e.space
+      return {
+        root: { marginBottom: t[2], fontSize: 'inherit' },
+        headingWrapper: { marginBottom: t[0] },
+      }
+    })(ArgumentsRenderer)
     n.d(t, 'a', function() {
       return p
     })
@@ -7931,67 +7992,6 @@
     })(TableRenderer)
     n.d(t, 'a', function() {
       return l
-    })
-  },
-  function(e, t, n) {
-    'use strict'
-    var r = n(1),
-      i = n.n(r),
-      a = n(0),
-      o = n.n(a),
-      s = n(22),
-      l = n(20),
-      u = n(2),
-      c =
-        Object.assign ||
-        function(e) {
-          for (var t = 1; t < arguments.length; t++) {
-            var n = arguments[t]
-            for (var r in n)
-              Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
-          }
-          return e
-        }
-    function ArgumentsRenderer(e) {
-      var t = e.classes,
-        n = e.args,
-        r = e.heading
-      return 0 === n.length
-        ? null
-        : i.a.createElement(
-            'div',
-            { className: t.root },
-            r &&
-              i.a.createElement(
-                'div',
-                { className: t.headingWrapper },
-                i.a.createElement(l.a, { level: 5 }, 'Arguments')
-              ),
-            n.map(function(e) {
-              return i.a.createElement(s.a, c({ key: e.name }, e))
-            })
-          )
-    }
-    ArgumentsRenderer.propTypes = {
-      classes: o.a.object.isRequired,
-      args: o.a.arrayOf(
-        o.a.shape({
-          name: o.a.string.isRequired,
-          type: o.a.object,
-          description: o.a.string,
-        })
-      ).isRequired,
-      heading: o.a.bool,
-    }
-    var p = Object(u.a)(function styles(e) {
-      var t = e.space
-      return {
-        root: { marginBottom: t[2], fontSize: 'inherit' },
-        headingWrapper: { marginBottom: t[0] },
-      }
-    })(ArgumentsRenderer)
-    n.d(t, 'a', function() {
-      return p
     })
   },
   function(e, t) {
@@ -8166,11 +8166,11 @@
   },
   function(e, t, n) {
     var r = n(31),
-      i = n(181),
-      a = n(182),
-      o = n(183),
-      s = n(184),
-      l = n(185)
+      i = n(179),
+      a = n(180),
+      o = n(181),
+      s = n(182),
+      l = n(183)
     function Stack(e) {
       var t = (this.__data__ = new r(e))
       this.size = t.size
@@ -8200,11 +8200,11 @@
     }
   },
   function(e, t, n) {
-    var r = n(192),
-      i = n(199),
-      a = n(201),
-      o = n(202),
-      s = n(203)
+    var r = n(190),
+      i = n(197),
+      a = n(199),
+      o = n(200),
+      s = n(201)
     function MapCache(e) {
       var t = -1,
         n = null == e ? 0 : e.length
@@ -8260,7 +8260,7 @@
     }
   },
   function(e, t, n) {
-    var r = n(212),
+    var r = n(210),
       i = n(13),
       a = Object.prototype,
       o = a.hasOwnProperty,
@@ -8285,7 +8285,7 @@
   function(e, t, n) {
     ;(function(e) {
       var r = n(6),
-        i = n(214),
+        i = n(212),
         a = 'object' == typeof t && t && !t.nodeType && t,
         o = a && 'object' == typeof e && e && !e.nodeType && e,
         s = o && o.exports === a ? r.Buffer : void 0,
@@ -8294,9 +8294,9 @@
     }.call(this, n(53)(e)))
   },
   function(e, t, n) {
-    var r = n(216),
-      i = n(217),
-      a = n(218),
+    var r = n(214),
+      i = n(215),
+      a = n(216),
       o = a && a.isTypedArray,
       s = o ? i(o) : r
     e.exports = s
@@ -8321,11 +8321,11 @@
     }
   },
   function(e, t, n) {
-    var r = n(240),
-      i = n(266),
+    var r = n(238),
+      i = n(264),
       a = n(60),
       o = n(8),
-      s = n(273)
+      s = n(271)
     e.exports = function baseIteratee(e) {
       return 'function' == typeof e
         ? e
@@ -8440,7 +8440,7 @@
     'use strict'
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.create = t.createGenerateClassName = t.sheets = t.RuleList = t.SheetsManager = t.SheetsRegistry = t.toCssValue = t.getDynamicStyles = void 0)
-    var r = n(142)
+    var r = n(140)
     Object.defineProperty(t, 'getDynamicStyles', {
       enumerable: !0,
       get: function get() {
@@ -8461,7 +8461,7 @@
         return _interopRequireDefault(a).default
       },
     })
-    var o = n(143)
+    var o = n(141)
     Object.defineProperty(t, 'SheetsManager', {
       enumerable: !0,
       get: function get() {
@@ -8489,7 +8489,7 @@
         return _interopRequireDefault(u).default
       },
     })
-    var c = _interopRequireDefault(n(148))
+    var c = _interopRequireDefault(n(146))
     function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -8524,17 +8524,11 @@
     }
   },
   function(e, t, n) {
-    var r = n(175),
-      i = n(225)(function(e, t, n) {
+    var r = n(173),
+      i = n(223)(function(e, t, n) {
         r(e, t, n)
       })
     e.exports = i
-  },
-  function(e, t, n) {
-    var r = n(286)
-    e.exports = function isNaN(e) {
-      return r(e) && e != +e
-    }
   },
   function(e, t, n) {
     'use strict'
@@ -8544,7 +8538,7 @@
  * Copyright (c) 2014-2017, Jon Schlinkert.
  * Released under the MIT License.
  */ var r = n(
-      288
+      279
     )
     function isObjectObject(e) {
       return (
@@ -9643,6 +9637,12 @@
     }
   },
   function(e, t, n) {
+    var r = n(287)
+    e.exports = function isNaN(e) {
+      return r(e) && e != +e
+    }
+  },
+  function(e, t, n) {
     'use strict'
     Object.defineProperty(t, '__esModule', { value: !0 })
     var r = (function() {
@@ -9728,7 +9728,7 @@
     Object.defineProperty(t, '__esModule', { value: !0 })
     var r = (function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
-    })(n(145))
+    })(n(143))
     t.default = function(e) {
       return e && e[r.default] && e === e[r.default]()
     }
@@ -9767,7 +9767,7 @@
     'use strict'
     Object.defineProperty(t, '__esModule', { value: !0 })
     var r = _interopRequireDefault(n(12)),
-      i = (_interopRequireDefault(n(77)), _interopRequireDefault(n(147)))
+      i = (_interopRequireDefault(n(77)), _interopRequireDefault(n(145)))
     function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -10107,7 +10107,7 @@ object-assign
     e.exports = i
   },
   function(e, t, n) {
-    var r = n(204)()
+    var r = n(202)()
     e.exports = r
   },
   function(e, t, n) {
@@ -10132,14 +10132,14 @@ object-assign
   },
   function(e, t, n) {
     var r = n(92),
-      i = n(223),
+      i = n(221),
       a = n(17)
     e.exports = function keysIn(e) {
       return a(e) ? r(e, !0) : i(e)
     }
   },
   function(e, t, n) {
-    var r = n(222),
+    var r = n(220),
       i = n(55),
       a = n(8),
       o = n(57),
@@ -10184,20 +10184,20 @@ object-assign
         react_group__WEBPACK_IMPORTED_MODULE_2__
       ),
       javascript_stringify__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-        118
+        115
       ),
       javascript_stringify__WEBPACK_IMPORTED_MODULE_3___default = __webpack_require__.n(
         javascript_stringify__WEBPACK_IMPORTED_MODULE_3__
       ),
       rsg_components_Arguments__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-        44
+        43
       ),
       rsg_components_Argument__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
         22
       ),
       rsg_components_Code__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9),
       rsg_components_JsDoc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-        21
+        23
       ),
       rsg_components_Markdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
         4
@@ -10212,10 +10212,10 @@ object-assign
         10
       ),
       rsg_components_Para__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
-        23
+        21
       ),
       rsg_components_Table__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
-        43
+        44
       ),
       _util__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(5),
       _extends =
@@ -10563,9 +10563,9 @@ object-assign
  * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
  * @license  MIT
  */
-      var r = n(234),
-        i = n(235),
-        a = n(236)
+      var r = n(232),
+        i = n(233),
+        a = n(234)
       function kMaxLength() {
         return Buffer.TYPED_ARRAY_SUPPORT ? 2147483647 : 1073741823
       }
@@ -11676,7 +11676,7 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(242),
+    var r = n(240),
       i = n(13)
     e.exports = function baseIsEqual(e, t, n, a, o) {
       return (
@@ -11688,9 +11688,9 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(243),
-      i = n(246),
-      a = n(247),
+    var r = n(241),
+      i = n(244),
+      a = n(245),
       o = 1,
       s = 2
     e.exports = function equalArrays(e, t, n, l, u, c) {
@@ -11754,21 +11754,21 @@ object-assign
   function(e, t, n) {
     var r = n(8),
       i = n(62),
-      a = n(267),
+      a = n(265),
       o = n(102)
     e.exports = function castPath(e, t) {
       return r(e) ? e : i(e, t) ? [e] : a(o(e))
     }
   },
   function(e, t, n) {
-    var r = n(269)
+    var r = n(267)
     e.exports = function toString(e) {
       return null == e ? '' : r(e)
     }
   },
   function(e, t, n) {
     var r = n(7),
-      i = n(280),
+      i = n(278),
       a = n(104),
       o = 'Expected a function',
       s = Math.max,
@@ -11858,51 +11858,6 @@ object-assign
   },
   function(e, t, n) {
     'use strict'
-    Object.defineProperty(t, '__esModule', { value: !0 })
-    var r =
-        Object.assign ||
-        function(e) {
-          for (var t = 1; t < arguments.length; t++) {
-            var n = arguments[t]
-            for (var r in n)
-              Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
-          }
-          return e
-        },
-      i = (function _interopRequireWildcard(e) {
-        if (e && e.__esModule) return e
-        var t = {}
-        if (null != e)
-          for (var n in e)
-            Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n])
-        return (t.default = e), t
-      })(n(1)),
-      a = n(106),
-      o = _interopRequireDefault(n(290)),
-      s = _interopRequireDefault(n(291))
-    function _interopRequireDefault(e) {
-      return e && e.__esModule ? e : { default: e }
-    }
-    function _objectWithoutProperties(e, t) {
-      var n = {}
-      for (var r in e)
-        t.indexOf(r) >= 0 ||
-          (Object.prototype.hasOwnProperty.call(e, r) && (n[r] = e[r]))
-      return n
-    }
-    t.default = function Button(e) {
-      var t = e.testID,
-        n = _objectWithoutProperties(e, ['testID']),
-        l = s.default
-      return i.createElement(
-        a.ThemeProvider,
-        { theme: o.default },
-        i.createElement(l, r({ 'data-testid': t }, n))
-      )
-    }
-  },
-  function(e, t, n) {
-    'use strict'
     n.r(t),
       function(e, r) {
         n.d(t, 'css', function() {
@@ -11939,19 +11894,19 @@ object-assign
               return Ue
             }
           )
-        var i = n(69),
+        var i = n(68),
           a = n.n(i),
-          o = n(70),
+          o = n(69),
           s = n.n(o),
-          l = n(132),
+          l = n(124),
           u = n.n(l),
           c = n(1),
           p = n.n(c),
           f = n(0),
           h = n.n(f),
-          d = n(71),
+          d = n(70),
           m = n.n(d),
-          g = n(133),
+          g = n(125),
           y = /([A-Z])/g
         var v = function hyphenate$2(e) {
             return e.replace(y, '-$1').toLowerCase()
@@ -13407,44 +13362,17 @@ object-assign
   },
   function(e, t, n) {
     'use strict'
-  },
-  function(e, t) {
-    e.exports = function requireInRuntime(e, t) {
-      if (!(t in e))
-        throw new Error(
-          'require() statements can be added only by editing a Markdown example file: require("' +
-            t +
-            '")'
-        )
-      return e[t]
-    }
-  },
-  function(e, t) {
-    e.exports = function evalInContext(e, t, n) {
-      return new Function('require', 'state', 'setState', e + n).bind(null, t)
-    }
-  },
-  function(e, t, n) {
-    'use strict'
     Object.defineProperty(t, '__esModule', { value: !0 })
-    var r = (function() {
-        function defineProperties(e, t) {
-          for (var n = 0; n < t.length; n++) {
-            var r = t[n]
-            ;(r.enumerable = r.enumerable || !1),
-              (r.configurable = !0),
-              'value' in r && (r.writable = !0),
-              Object.defineProperty(e, r.key, r)
+    var r =
+        Object.assign ||
+        function(e) {
+          for (var t = 1; t < arguments.length; t++) {
+            var n = arguments[t]
+            for (var r in n)
+              Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
           }
-        }
-        return function(e, t, n) {
-          return (
-            t && defineProperties(e.prototype, t),
-            n && defineProperties(e, n),
-            e
-          )
-        }
-      })(),
+          return e
+        },
       i = (function _interopRequireWildcard(e) {
         if (e && e.__esModule) return e
         var t = {}
@@ -13452,66 +13380,26 @@ object-assign
           for (var n in e)
             Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n])
         return (t.default = e), t
-      })(n(1))
-    function _classCallCheck(e, t) {
-      if (!(e instanceof t))
-        throw new TypeError('Cannot call a class as a function')
+      })(n(1)),
+      a = (function _interopRequireDefault(e) {
+        return e && e.__esModule ? e : { default: e }
+      })(n(289))
+    function _objectWithoutProperties(e, t) {
+      var n = {}
+      for (var r in e)
+        t.indexOf(r) >= 0 ||
+          (Object.prototype.hasOwnProperty.call(e, r) && (n[r] = e[r]))
+      return n
     }
-    function _possibleConstructorReturn(e, t) {
-      if (!e)
-        throw new ReferenceError(
-          "this hasn't been initialised - super() hasn't been called"
-        )
-      return !t || ('object' != typeof t && 'function' != typeof t) ? e : t
+    t.default = function Button(e) {
+      var t = e.testID,
+        n = _objectWithoutProperties(e, ['testID']),
+        o = a.default
+      return i.createElement(o, r({ 'data-testid': t }, n))
     }
-    function _inherits(e, t) {
-      if ('function' != typeof t && null !== t)
-        throw new TypeError(
-          'Super expression must either be null or a function, not ' + typeof t
-        )
-      ;(e.prototype = Object.create(t && t.prototype, {
-        constructor: {
-          value: e,
-          enumerable: !1,
-          writable: !0,
-          configurable: !0,
-        },
-      })),
-        t &&
-          (Object.setPrototypeOf
-            ? Object.setPrototypeOf(e, t)
-            : (e.__proto__ = t))
-    }
-    var a = (function(e) {
-      function Input() {
-        return (
-          _classCallCheck(this, Input),
-          _possibleConstructorReturn(
-            this,
-            (Input.__proto__ || Object.getPrototypeOf(Input)).apply(
-              this,
-              arguments
-            )
-          )
-        )
-      }
-      return (
-        _inherits(Input, i.Component),
-        r(Input, [
-          {
-            key: 'render',
-            value: function render() {
-              return i.createElement('input', {
-                onChange: this.props.onChange,
-                value: this.props.value,
-              })
-            },
-          },
-        ]),
-        Input
-      )
-    })()
-    t.default = a
+  },
+  function(e, t, n) {
+    'use strict'
   },
   function(e, t, n) {
     'use strict'
@@ -13736,8 +13624,8 @@ object-assign
         },
       }
     }
-    var a = _interopRequireDefault(n(161)),
-      o = _interopRequireDefault(n(162))
+    var a = _interopRequireDefault(n(159)),
+      o = _interopRequireDefault(n(160))
     function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -13886,7 +13774,7 @@ object-assign
       })
     var r = (function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
-    })(n(163))
+    })(n(161))
     function convertCase(e) {
       var t = {}
       for (var n in e) t[(0, r.default)(n)] = e[n]
@@ -13942,7 +13830,7 @@ object-assign
     var i = addCamelCasedVersion(
       (function _interopRequireDefault(e) {
         return e && e.__esModule ? e : { default: e }
-      })(n(164)).default
+      })(n(162)).default
     )
     function iterate(e, t, n) {
       if (!t) return t
@@ -14206,7 +14094,7 @@ object-assign
   function(e, t, n) {
     var r = n(95),
       i = n(61),
-      a = n(276),
+      a = n(274),
       o = n(8)
     e.exports = function map(e, t) {
       return (o(e) ? r : a)(e, i(t, 3))
@@ -14286,7 +14174,7 @@ object-assign
       n.d(t, 'a', function() {
         return transform
       })
-      var r = n(124),
+      var r = n(121),
         i = n(39),
         a = {
           quot: '"',
@@ -21665,7 +21553,7 @@ object-assign
   function(e, t, n) {
     'use strict'
     ;(function(e, r) {
-      var i = n(125)
+      var i = n(122)
       function Chunk(e, t, n) {
         ;(this.start = e),
           (this.end = t),
@@ -22585,6 +22473,63 @@ object-assign
         ;(r[e] = t), (i[t] = e)
       })
   },
+  function(e, t, n) {
+    'use strict'
+    Object.defineProperty(t, '__esModule', { value: !0 })
+    var r = (function _interopRequireWildcard(e) {
+        if (e && e.__esModule) return e
+        var t = {}
+        if (null != e)
+          for (var n in e)
+            Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n])
+        return (t.default = e), t
+      })(n(1)),
+      i = n(105),
+      a = (function _interopRequireDefault(e) {
+        return e && e.__esModule ? e : { default: e }
+      })(n(281))
+    t.default = function(e) {
+      var t = e.children
+      return r.createElement(i.ThemeProvider, { theme: a.default }, t)
+    }
+  },
+  function(e, t, n) {
+    e.exports = (function() {
+      'use strict'
+      return function(e) {
+        function toSheet(t) {
+          if (t)
+            try {
+              e(t + '}')
+            } catch (e) {}
+        }
+        return function ruleSheet(t, n, r, i, a, o, s, l, u, c) {
+          switch (t) {
+            case 1:
+              if (0 === u && 64 === n.charCodeAt(0)) return e(n + ';'), ''
+              break
+            case 2:
+              if (0 === l) return n + '/*|*/'
+              break
+            case 3:
+              switch (l) {
+                case 102:
+                case 112:
+                  return e(r[0] + n), ''
+                default:
+                  return n + (0 === c ? '/*|*/' : '')
+              }
+            case -2:
+              n.split('/*|*/}').forEach(toSheet)
+          }
+        }
+      }
+    })()
+  },
+  function(e, t, n) {
+    'use strict'
+    e.exports = n(280)
+  },
   function(e, t) {
     e.exports = function clipboardCopy(e) {
       if (navigator.clipboard) return navigator.clipboard.writeText(e)
@@ -22682,43 +22627,6 @@ object-assign
       return getComponent
     })
   },
-  function(e, t, n) {
-    e.exports = (function() {
-      'use strict'
-      return function(e) {
-        function toSheet(t) {
-          if (t)
-            try {
-              e(t + '}')
-            } catch (e) {}
-        }
-        return function ruleSheet(t, n, r, i, a, o, s, l, u, c) {
-          switch (t) {
-            case 1:
-              if (0 === u && 64 === n.charCodeAt(0)) return e(n + ';'), ''
-              break
-            case 2:
-              if (0 === l) return n + '/*|*/'
-              break
-            case 3:
-              switch (l) {
-                case 102:
-                case 112:
-                  return e(r[0] + n), ''
-                default:
-                  return n + (0 === c ? '/*|*/' : '')
-              }
-            case -2:
-              n.split('/*|*/}').forEach(toSheet)
-          }
-        }
-      }
-    })()
-  },
-  function(e, t, n) {
-    'use strict'
-    e.exports = n(289)
-  },
   function(e, t) {
     function cssWithMappingToString(e, t) {
       var n,
@@ -22807,7 +22715,7 @@ object-assign
       u = null,
       c = 0,
       p = [],
-      f = n(239)
+      f = n(237)
     function addStylesToDom(e, t) {
       for (var n = 0; n < e.length; n++) {
         var r = e[n],
@@ -22998,7 +22906,7 @@ object-assign
     }
   },
   function(e, t, n) {
-    e.exports = n(301)
+    e.exports = n(297)
   },
   function(e, t) {
     !(function() {
@@ -23079,7 +22987,7 @@ object-assign
   },
   function(e, t, n) {
     'use strict'
-    n(139).polyfill()
+    n(137).polyfill()
   },
   function(e, t, n) {
     'use strict'
@@ -23116,7 +23024,7 @@ object-assign
   },
   function(e, t, n) {
     'use strict'
-    e.exports = n(141).polyfill()
+    e.exports = n(139).polyfill()
   },
   function(e, t, n) {
     ;(function(t, n) {
@@ -23735,7 +23643,7 @@ object-assign
     n.r(t),
       function(e, r) {
         var i,
-          a = n(111)
+          a = n(108)
         i =
           'undefined' != typeof self
             ? self
@@ -23810,18 +23718,18 @@ object-assign
           )
         }
       })(),
-      o = _interopRequireDefault(n(149)),
+      o = _interopRequireDefault(n(147)),
       s = _interopRequireDefault(n(77)),
-      l = _interopRequireDefault(n(150)),
-      u = _interopRequireDefault(n(151)),
-      c = _interopRequireDefault(n(157)),
-      p = _interopRequireDefault(n(158)),
+      l = _interopRequireDefault(n(148)),
+      u = _interopRequireDefault(n(149)),
+      c = _interopRequireDefault(n(155)),
+      p = _interopRequireDefault(n(156)),
       f = _interopRequireDefault(n(47)),
       h = _interopRequireDefault(n(19)),
       d = _interopRequireDefault(n(76)),
       m = _interopRequireDefault(n(30)),
-      g = _interopRequireDefault(n(159)),
-      y = _interopRequireDefault(n(160))
+      g = _interopRequireDefault(n(157)),
+      y = _interopRequireDefault(n(158))
     function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -24093,11 +24001,11 @@ object-assign
   function(e, t, n) {
     'use strict'
     Object.defineProperty(t, '__esModule', { value: !0 })
-    var r = _interopRequireDefault(n(152)),
-      i = _interopRequireDefault(n(153)),
-      a = _interopRequireDefault(n(154)),
-      o = _interopRequireDefault(n(155)),
-      s = _interopRequireDefault(n(156))
+    var r = _interopRequireDefault(n(150)),
+      i = _interopRequireDefault(n(151)),
+      a = _interopRequireDefault(n(152)),
+      o = _interopRequireDefault(n(153)),
+      s = _interopRequireDefault(n(154))
     function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -25359,12 +25267,12 @@ object-assign
      * LICENSE file in the root directory of this source tree.
      */ var o = a(78),
       s = a(1),
-      l = a(167),
+      l = a(165),
       u = a(79),
       p = a(81),
-      m = a(168),
-      y = a(169),
-      v = a(170),
+      m = a(166),
+      y = a(167),
+      v = a(168),
       _ = a(80)
     function A(e) {
       for (
@@ -31246,7 +31154,7 @@ object-assign
   },
   function(e, t, n) {
     'use strict'
-    var r = n(171)
+    var r = n(169)
     e.exports = function containsNode(e, t) {
       return (
         !(!e || !t) &&
@@ -31263,7 +31171,7 @@ object-assign
   },
   function(e, t, n) {
     'use strict'
-    var r = n(172)
+    var r = n(170)
     e.exports = function isTextNode(e) {
       return r(e) && 3 == e.nodeType
     }
@@ -31284,7 +31192,7 @@ object-assign
   },
   function(e, t, n) {
     'use strict'
-    var r = n(174)
+    var r = n(172)
     function emptyFunction() {}
     e.exports = function() {
       function shim(e, t, n, i, a, o) {
@@ -31329,7 +31237,7 @@ object-assign
     var r = n(48),
       i = n(84),
       a = n(86),
-      o = n(205),
+      o = n(203),
       s = n(7),
       l = n(91),
       u = n(90)
@@ -31427,7 +31335,7 @@ object-assign
   },
   function(e, t, n) {
     var r = n(50),
-      i = n(189),
+      i = n(187),
       a = n(7),
       o = n(83),
       s = /^\[object .+?Constructor\]$/,
@@ -31475,7 +31383,7 @@ object-assign
   },
   function(e, t, n) {
     var r,
-      i = n(190),
+      i = n(188),
       a = (r = /[^.]+$/.exec((i && i.keys && i.keys.IE_PROTO) || ''))
         ? 'Symbol(src)_1.' + r
         : ''
@@ -31493,7 +31401,7 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(193),
+    var r = n(191),
       i = n(31),
       a = n(49)
     e.exports = function mapCacheClear() {
@@ -31506,11 +31414,11 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(194),
-      i = n(195),
-      a = n(196),
-      o = n(197),
-      s = n(198)
+    var r = n(192),
+      i = n(193),
+      a = n(194),
+      o = n(195),
+      s = n(196)
     function Hash(e) {
       var t = -1,
         n = null == e ? 0 : e.length
@@ -31619,20 +31527,20 @@ object-assign
   },
   function(e, t, n) {
     var r = n(84),
-      i = n(206),
-      a = n(207),
-      o = n(209),
-      s = n(210),
+      i = n(204),
+      a = n(205),
+      o = n(207),
+      s = n(208),
       l = n(55),
       u = n(8),
-      c = n(213),
+      c = n(211),
       p = n(57),
       f = n(50),
       h = n(7),
-      d = n(215),
+      d = n(213),
       m = n(58),
       g = n(90),
-      y = n(219)
+      y = n(217)
     e.exports = function baseMergeDeep(e, t, n, v, b, _, x) {
       var S = g(e, n),
         w = g(t, n),
@@ -31681,7 +31589,7 @@ object-assign
     }.call(this, n(53)(e)))
   },
   function(e, t, n) {
-    var r = n(208)
+    var r = n(206)
     e.exports = function cloneTypedArray(e, t) {
       var n = t ? r(e.buffer) : e.buffer
       return new e.constructor(n, e.byteOffset, e.length)
@@ -31703,7 +31611,7 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(211),
+    var r = n(209),
       i = n(88),
       a = n(54)
     e.exports = function initCloneObject(e) {
@@ -31811,14 +31719,14 @@ object-assign
     }.call(this, n(53)(e)))
   },
   function(e, t, n) {
-    var r = n(220),
+    var r = n(218),
       i = n(91)
     e.exports = function toPlainObject(e) {
       return r(e, i(e))
     }
   },
   function(e, t, n) {
-    var r = n(221),
+    var r = n(219),
       i = n(52)
     e.exports = function copyObject(e, t, n, a) {
       var o = !n
@@ -31849,7 +31757,7 @@ object-assign
   function(e, t, n) {
     var r = n(7),
       i = n(54),
-      a = n(224),
+      a = n(222),
       o = Object.prototype.hasOwnProperty
     e.exports = function baseKeysIn(e) {
       if (!r(e)) return a(e)
@@ -31867,8 +31775,8 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(226),
-      i = n(233)
+    var r = n(224),
+      i = n(231)
     e.exports = function createAssigner(e) {
       return r(function(t, n) {
         var r = -1,
@@ -31891,14 +31799,14 @@ object-assign
   },
   function(e, t, n) {
     var r = n(60),
-      i = n(227),
-      a = n(229)
+      i = n(225),
+      a = n(227)
     e.exports = function baseRest(e, t) {
       return a(i(e, t, r), e + '')
     }
   },
   function(e, t, n) {
-    var r = n(228),
+    var r = n(226),
       i = Math.max
     e.exports = function overRest(e, t, n) {
       return (
@@ -31933,12 +31841,12 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(230),
-      i = n(232)(r)
+    var r = n(228),
+      i = n(230)(r)
     e.exports = i
   },
   function(e, t, n) {
-    var r = n(231),
+    var r = n(229),
       i = n(85),
       a = n(60),
       o = i
@@ -32155,14 +32063,14 @@ object-assign
       }
   },
   function(e, t, n) {
-    var r = n(238)
+    var r = n(236)
     'string' == typeof r && (r = [[e.i, r, '']])
     var i = { hmr: !0, transform: void 0, insertInto: void 0 }
-    n(135)(r, i)
+    n(133)(r, i)
     r.locals && (e.exports = r.locals)
   },
   function(e, t, n) {
-    ;(e.exports = n(134)(!1)).push([
+    ;(e.exports = n(132)(!1)).push([
       e.i,
       '/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */\n\n/* Tomorrow Comment */\n.hljs-comment,\n.hljs-quote {\n  color: #8e908c;\n}\n\n/* Tomorrow Red */\n.hljs-variable,\n.hljs-template-variable,\n.hljs-tag,\n.hljs-name,\n.hljs-selector-id,\n.hljs-selector-class,\n.hljs-regexp,\n.hljs-deletion {\n  color: #c82829;\n}\n\n/* Tomorrow Orange */\n.hljs-number,\n.hljs-built_in,\n.hljs-builtin-name,\n.hljs-literal,\n.hljs-type,\n.hljs-params,\n.hljs-meta,\n.hljs-link {\n  color: #f5871f;\n}\n\n/* Tomorrow Yellow */\n.hljs-attribute {\n  color: #eab700;\n}\n\n/* Tomorrow Green */\n.hljs-string,\n.hljs-symbol,\n.hljs-bullet,\n.hljs-addition {\n  color: #718c00;\n}\n\n/* Tomorrow Blue */\n.hljs-title,\n.hljs-section {\n  color: #4271ae;\n}\n\n/* Tomorrow Purple */\n.hljs-keyword,\n.hljs-selector-tag {\n  color: #8959a8;\n}\n\n.hljs {\n  display: block;\n  overflow-x: auto;\n  background: white;\n  color: #4d4d4c;\n  padding: 0.5em;\n}\n\n.hljs-emphasis {\n  font-style: italic;\n}\n\n.hljs-strong {\n  font-weight: bold;\n}\n',
       '',
@@ -32201,8 +32109,8 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(241),
-      i = n(265),
+    var r = n(239),
+      i = n(263),
       a = n(99)
     e.exports = function baseMatches(e) {
       var t = i(e)
@@ -32245,9 +32153,9 @@ object-assign
   function(e, t, n) {
     var r = n(48),
       i = n(97),
-      a = n(248),
-      o = n(251),
-      s = n(260),
+      a = n(246),
+      o = n(249),
+      s = n(258),
       l = n(8),
       u = n(57),
       c = n(58),
@@ -32287,8 +32195,8 @@ object-assign
   },
   function(e, t, n) {
     var r = n(51),
-      i = n(244),
-      a = n(245)
+      i = n(242),
+      a = n(243)
     function SetCache(e) {
       var t = -1,
         n = null == e ? 0 : e.length
@@ -32326,8 +32234,8 @@ object-assign
       i = n(87),
       a = n(25),
       o = n(97),
-      s = n(249),
-      l = n(250),
+      s = n(247),
+      l = n(248),
       u = 1,
       c = 2,
       p = '[object Boolean]',
@@ -32401,7 +32309,7 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(252),
+    var r = n(250),
       i = 1,
       a = Object.prototype.hasOwnProperty
     e.exports = function equalObjects(e, t, n, o, s, l) {
@@ -32445,15 +32353,15 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(253),
-      i = n(255),
+    var r = n(251),
+      i = n(253),
       a = n(36)
     e.exports = function getAllKeys(e) {
       return r(e, a, i)
     }
   },
   function(e, t, n) {
-    var r = n(254),
+    var r = n(252),
       i = n(8)
     e.exports = function baseGetAllKeys(e, t, n) {
       var a = t(e)
@@ -32467,8 +32375,8 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(256),
-      i = n(257),
+    var r = n(254),
+      i = n(255),
       a = Object.prototype.propertyIsEnumerable,
       o = Object.getOwnPropertySymbols,
       s = o
@@ -32499,7 +32407,7 @@ object-assign
   },
   function(e, t, n) {
     var r = n(54),
-      i = n(259),
+      i = n(257),
       a = Object.prototype.hasOwnProperty
     e.exports = function baseKeys(e) {
       if (!r(e)) return i(e)
@@ -32513,11 +32421,11 @@ object-assign
     e.exports = r
   },
   function(e, t, n) {
-    var r = n(261),
+    var r = n(259),
       i = n(49),
-      a = n(262),
-      o = n(263),
-      s = n(264),
+      a = n(260),
+      o = n(261),
+      s = n(262),
       l = n(16),
       u = n(83),
       c = u(r),
@@ -32583,7 +32491,7 @@ object-assign
   function(e, t, n) {
     var r = n(96),
       i = n(66),
-      a = n(270),
+      a = n(268),
       o = n(62),
       s = n(98),
       l = n(99),
@@ -32602,7 +32510,7 @@ object-assign
   function(e, t, n) {
     var r = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,
       i = /\\(\\)?/g,
-      a = n(268)(function(e) {
+      a = n(266)(function(e) {
         var t = []
         return (
           46 === e.charCodeAt(0) && t.push(''),
@@ -32642,8 +32550,8 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(271),
-      i = n(272)
+    var r = n(269),
+      i = n(270)
     e.exports = function hasIn(e, t) {
       return null != e && i(e, t, r)
     }
@@ -32672,8 +32580,8 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(274),
-      i = n(275),
+    var r = n(272),
+      i = n(273),
       a = n(62),
       o = n(38)
     e.exports = function property(e) {
@@ -32696,7 +32604,7 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(277),
+    var r = n(275),
       i = n(17)
     e.exports = function baseMap(e, t) {
       var n = -1,
@@ -32710,8 +32618,8 @@ object-assign
     }
   },
   function(e, t, n) {
-    var r = n(278),
-      i = n(279)(r)
+    var r = n(276),
+      i = n(277)(r)
     e.exports = i
   },
   function(e, t, n) {
@@ -32740,158 +32648,6 @@ object-assign
     var r = n(6)
     e.exports = function() {
       return r.Date.now()
-    }
-  },
-  function(e, t, n) {
-    var r = n(61),
-      i = n(17),
-      a = n(36)
-    e.exports = function createFind(e) {
-      return function(t, n, o) {
-        var s = Object(t)
-        if (!i(t)) {
-          var l = r(n, 3)
-          ;(t = a(t)),
-            (n = function(e) {
-              return l(s[e], e, s)
-            })
-        }
-        var u = e(t, n, o)
-        return u > -1 ? s[l ? t[u] : u] : void 0
-      }
-    }
-  },
-  function(e, t, n) {
-    var r = n(283),
-      i = n(61),
-      a = n(284),
-      o = Math.max
-    e.exports = function findIndex(e, t, n) {
-      var s = null == e ? 0 : e.length
-      if (!s) return -1
-      var l = null == n ? 0 : a(n)
-      return l < 0 && (l = o(s + l, 0)), r(e, i(t, 3), l)
-    }
-  },
-  function(e, t) {
-    e.exports = function baseFindIndex(e, t, n, r) {
-      for (var i = e.length, a = n + (r ? 1 : -1); r ? a-- : ++a < i; )
-        if (t(e[a], a, e)) return a
-      return -1
-    }
-  },
-  function(e, t, n) {
-    var r = n(285)
-    e.exports = function toInteger(e) {
-      var t = r(e),
-        n = t % 1
-      return t == t ? (n ? t - n : t) : 0
-    }
-  },
-  function(e, t, n) {
-    var r = n(104),
-      i = 1 / 0,
-      a = 1.7976931348623157e308
-    e.exports = function toFinite(e) {
-      return e
-        ? (e = r(e)) === i || e === -i
-          ? (e < 0 ? -1 : 1) * a
-          : e == e
-            ? e
-            : 0
-        : 0 === e
-          ? e
-          : 0
-    }
-  },
-  function(e, t, n) {
-    var r = n(16),
-      i = n(13),
-      a = '[object Number]'
-    e.exports = function isNumber(e) {
-      return 'number' == typeof e || (i(e) && r(e) == a)
-    }
-  },
-  function(e, t, n) {
-    e.exports = {
-      config: {
-        title: 'Jane Components Style Guide',
-        version: void 0,
-        showCode: !1,
-        showUsage: !1,
-        showSidebar: !0,
-        previewDelay: 500,
-        theme: {},
-        styles: {},
-        compilerConfig: { objectAssign: 'Object.assign' },
-        editorConfig: {
-          theme: 'base16-light',
-          mode: 'jsx',
-          lineWrapping: !0,
-          smartIndent: !1,
-          matchBrackets: !0,
-          viewportMargin: 1 / 0,
-          lineNumbers: !1,
-        },
-        ribbon: {
-          url: 'https://github.com/jane/jane-components',
-          text: 'Contribute on GitHub',
-        },
-        pagePerSection: !1,
-      },
-      welcomeScreen: !1,
-      patterns: void 0,
-      sections: [
-        {
-          name: void 0,
-          exampleMode: 'collapse',
-          usageMode: 'collapse',
-          sectionDepth: 0,
-          description: void 0,
-          slug: '',
-          sections: [],
-          filepath: void 0,
-          components: [
-            {
-              filepath: 'src/button/button.js',
-              slug: 'button',
-              pathLine: 'src/button/button.js',
-              module: n(105),
-              props: n(293),
-              hasExamples: !0,
-              metadata: {},
-            },
-            {
-              filepath: 'src/input/input.js',
-              slug: 'input',
-              pathLine: 'src/input/input.js',
-              module: n(110),
-              props: n(295),
-              hasExamples: !0,
-              metadata: {},
-            },
-            {
-              filepath: 'src/input/inputcontainer.js',
-              slug: 'inputcontainer',
-              pathLine: 'src/input/inputcontainer.js',
-              module: n(297),
-              props: n(298),
-              hasExamples: !1,
-              metadata: {},
-            },
-            {
-              filepath: 'src/span/span.js',
-              slug: 'span',
-              pathLine: 'src/span/span.js',
-              module: n(299),
-              props: n(300),
-              hasExamples: !1,
-              metadata: {},
-            },
-          ],
-          content: void 0,
-        },
-      ],
     }
   },
   function(e, t, n) {
@@ -33058,13 +32814,147 @@ object-assign
     t.default = a
   },
   function(e, t, n) {
+    var r = n(61),
+      i = n(17),
+      a = n(36)
+    e.exports = function createFind(e) {
+      return function(t, n, o) {
+        var s = Object(t)
+        if (!i(t)) {
+          var l = r(n, 3)
+          ;(t = a(t)),
+            (n = function(e) {
+              return l(s[e], e, s)
+            })
+        }
+        var u = e(t, n, o)
+        return u > -1 ? s[l ? t[u] : u] : void 0
+      }
+    }
+  },
+  function(e, t, n) {
+    var r = n(284),
+      i = n(61),
+      a = n(285),
+      o = Math.max
+    e.exports = function findIndex(e, t, n) {
+      var s = null == e ? 0 : e.length
+      if (!s) return -1
+      var l = null == n ? 0 : a(n)
+      return l < 0 && (l = o(s + l, 0)), r(e, i(t, 3), l)
+    }
+  },
+  function(e, t) {
+    e.exports = function baseFindIndex(e, t, n, r) {
+      for (var i = e.length, a = n + (r ? 1 : -1); r ? a-- : ++a < i; )
+        if (t(e[a], a, e)) return a
+      return -1
+    }
+  },
+  function(e, t, n) {
+    var r = n(286)
+    e.exports = function toInteger(e) {
+      var t = r(e),
+        n = t % 1
+      return t == t ? (n ? t - n : t) : 0
+    }
+  },
+  function(e, t, n) {
+    var r = n(104),
+      i = 1 / 0,
+      a = 1.7976931348623157e308
+    e.exports = function toFinite(e) {
+      return e
+        ? (e = r(e)) === i || e === -i
+          ? (e < 0 ? -1 : 1) * a
+          : e == e
+            ? e
+            : 0
+        : 0 === e
+          ? e
+          : 0
+    }
+  },
+  function(e, t, n) {
+    var r = n(16),
+      i = n(13),
+      a = '[object Number]'
+    e.exports = function isNumber(e) {
+      return 'number' == typeof e || (i(e) && r(e) == a)
+    }
+  },
+  function(e, t, n) {
+    e.exports = {
+      config: {
+        title: 'Jane Components Style Guide',
+        version: void 0,
+        showCode: !1,
+        showUsage: !1,
+        showSidebar: !0,
+        previewDelay: 500,
+        theme: {},
+        styles: {},
+        compilerConfig: { objectAssign: 'Object.assign' },
+        editorConfig: {
+          theme: 'base16-light',
+          mode: 'jsx',
+          lineWrapping: !0,
+          smartIndent: !1,
+          matchBrackets: !0,
+          viewportMargin: 1 / 0,
+          lineNumbers: !1,
+        },
+        ribbon: {
+          url: 'https://github.com/jane/jane-components',
+          text: 'Contribute on GitHub',
+        },
+        pagePerSection: !1,
+      },
+      welcomeScreen: !1,
+      patterns: void 0,
+      sections: [
+        {
+          name: void 0,
+          exampleMode: 'collapse',
+          usageMode: 'collapse',
+          sectionDepth: 0,
+          description: void 0,
+          slug: '',
+          sections: [],
+          filepath: void 0,
+          components: [
+            {
+              filepath: 'src/button/button.js',
+              slug: 'button',
+              pathLine: 'src/button/button.js',
+              module: n(106),
+              props: n(291),
+              hasExamples: !0,
+              metadata: {},
+            },
+            {
+              filepath: 'src/span/span.js',
+              slug: 'span',
+              pathLine: 'src/span/span.js',
+              module: n(295),
+              props: n(296),
+              hasExamples: !1,
+              metadata: {},
+            },
+          ],
+          content: void 0,
+        },
+      ],
+    }
+  },
+  function(e, t, n) {
     'use strict'
     Object.defineProperty(t, '__esModule', { value: !0 })
     var r = (function _interopRequireDefault(e) {
       return e && e.__esModule ? e : { default: e }
-    })(n(106))
-    n(105), n(107)
-    var i = n(292)
+    })(n(105))
+    n(106), n(107)
+    var i = n(290)
     t.default = r.default.button.withConfig({ displayName: 'buttonstyled' })(
       [
         'white-space:nowrap;background-color:',
@@ -33135,6 +33025,18 @@ object-assign
           required: !1,
           flowType: {
             name: 'signature',
+            type: 'function',
+            raw: '() => void',
+            signature: { arguments: [], return: { name: 'void' } },
+          },
+          description: '',
+          tags: {},
+          name: 'onClick',
+        },
+        {
+          required: !1,
+          flowType: {
+            name: 'signature',
             type: 'object',
             raw: '{}',
             signature: { properties: [] },
@@ -33175,13 +33077,13 @@ object-assign
         },
       ],
       doclets: {},
-      examples: n(294),
+      examples: n(292),
     }
   },
   function(e, t, n) {
     var r = { react: n(1) },
-      i = n(108).bind(null, r),
-      a = n(109).bind(null, "var React = require('react');", i)
+      i = n(293).bind(null, r),
+      a = n(294).bind(null, "var React = require('react');", i)
     e.exports = [
       {
         type: 'code',
@@ -33192,133 +33094,20 @@ object-assign
       },
     ]
   },
-  function(e, t, n) {
-    e.exports = {
-      description: '',
-      displayName: 'Input',
-      methods: [],
-      doclets: {},
-      examples: n(296),
+  function(e, t) {
+    e.exports = function requireInRuntime(e, t) {
+      if (!(t in e))
+        throw new Error(
+          'require() statements can be added only by editing a Markdown example file: require("' +
+            t +
+            '")'
+        )
+      return e[t]
     }
   },
-  function(e, t, n) {
-    var r = { react: n(1) },
-      i = n(108).bind(null, r),
-      a = n(109).bind(null, "var React = require('react');", i)
-    e.exports = [
-      {
-        type: 'code',
-        content: '<InputContainer />',
-        settings: {},
-        evalInContext: a,
-      },
-    ]
-  },
-  function(e, t, n) {
-    'use strict'
-    Object.defineProperty(t, '__esModule', { value: !0 })
-    var r = (function() {
-        function defineProperties(e, t) {
-          for (var n = 0; n < t.length; n++) {
-            var r = t[n]
-            ;(r.enumerable = r.enumerable || !1),
-              (r.configurable = !0),
-              'value' in r && (r.writable = !0),
-              Object.defineProperty(e, r.key, r)
-          }
-        }
-        return function(e, t, n) {
-          return (
-            t && defineProperties(e.prototype, t),
-            n && defineProperties(e, n),
-            e
-          )
-        }
-      })(),
-      i = (function _interopRequireDefault(e) {
-        return e && e.__esModule ? e : { default: e }
-      })(n(110)),
-      a = (function _interopRequireWildcard(e) {
-        if (e && e.__esModule) return e
-        var t = {}
-        if (null != e)
-          for (var n in e)
-            Object.prototype.hasOwnProperty.call(e, n) && (t[n] = e[n])
-        return (t.default = e), t
-      })(n(1))
-    function _classCallCheck(e, t) {
-      if (!(e instanceof t))
-        throw new TypeError('Cannot call a class as a function')
-    }
-    function _possibleConstructorReturn(e, t) {
-      if (!e)
-        throw new ReferenceError(
-          "this hasn't been initialised - super() hasn't been called"
-        )
-      return !t || ('object' != typeof t && 'function' != typeof t) ? e : t
-    }
-    function _inherits(e, t) {
-      if ('function' != typeof t && null !== t)
-        throw new TypeError(
-          'Super expression must either be null or a function, not ' + typeof t
-        )
-      ;(e.prototype = Object.create(t && t.prototype, {
-        constructor: {
-          value: e,
-          enumerable: !1,
-          writable: !0,
-          configurable: !0,
-        },
-      })),
-        t &&
-          (Object.setPrototypeOf
-            ? Object.setPrototypeOf(e, t)
-            : (e.__proto__ = t))
-    }
-    var o = (function(e) {
-      function InputContainer() {
-        _classCallCheck(this, InputContainer)
-        var e = _possibleConstructorReturn(
-          this,
-          (
-            InputContainer.__proto__ || Object.getPrototypeOf(InputContainer)
-          ).call(this)
-        )
-        return (e.state = { value: '' }), e
-      }
-      return (
-        _inherits(InputContainer, a.Component),
-        r(InputContainer, [
-          {
-            key: 'render',
-            value: function render() {
-              var e = this
-              return a.createElement(
-                'div',
-                null,
-                'input container rendering',
-                a.createElement(i.default, {
-                  value: this.state.value,
-                  onChange: function onChange(t) {
-                    return e.setState({ value: t.target.value })
-                  },
-                })
-              )
-            },
-          },
-        ]),
-        InputContainer
-      )
-    })()
-    t.default = o
-  },
-  function(e, t, n) {
-    e.exports = {
-      description: '',
-      displayName: 'InputContainer',
-      methods: [],
-      doclets: {},
-      examples: [],
+  function(e, t) {
+    e.exports = function evalInContext(e, t, n) {
+      return new Function('require', 'state', 'setState', e + n).bind(null, t)
     }
   },
   function(e, t, n) {
@@ -33348,7 +33137,7 @@ object-assign
   function(e, t, n) {
     'use strict'
     n.r(t)
-    n(137), n(138), n(140)
+    n(135), n(136), n(138)
     var r = n(26)
       .a.createStyleSheet({
         body: { isolate: !1, margin: 0, padding: 0, border: 0 },
@@ -33457,7 +33246,7 @@ object-assign
               value: function componentDidMount() {
                 var e = this
                 n.e(1)
-                  .then(n.bind(null, 311))
+                  .then(n.bind(null, 307))
                   .then(function(t) {
                     e.setState({ editor: t.default })
                   })
@@ -33479,10 +33268,10 @@ object-assign
       d = n(93),
       m = n(4),
       g = n(22),
-      y = n(44),
+      y = n(43),
       v = n(18),
-      b = n(21),
-      _ = n(43),
+      b = n(23),
+      _ = n(44),
       x =
         Object.assign ||
         function(e) {
@@ -33564,9 +33353,9 @@ object-assign
       (Usage.propTypes = {
         props: u.a.shape({ props: u.a.array, methods: u.a.array }).isRequired,
       })
-    var k = n(121),
+    var k = n(118),
       E = n.n(k),
-      C = n(122),
+      C = n(119),
       R = n.n(C),
       P = n(3),
       T = n.n(P)
@@ -34478,115 +34267,33 @@ object-assign
           },
         }
       })(PlaygroundErrorRenderer),
-      re = n(123),
-      ie = (function() {
-        function defineProperties(e, t) {
-          for (var n = 0; n < t.length; n++) {
-            var r = t[n]
-            ;(r.enumerable = r.enumerable || !1),
-              (r.configurable = !0),
-              'value' in r && (r.writable = !0),
-              Object.defineProperty(e, r.key, r)
-          }
-        }
-        return function(e, t, n) {
-          return (
-            t && defineProperties(e.prototype, t),
-            n && defineProperties(e, n),
-            e
-          )
-        }
-      })()
-    function Wrapper_classCallCheck(e, t) {
-      if (!(e instanceof t))
-        throw new TypeError('Cannot call a class as a function')
-    }
-    function Wrapper_possibleConstructorReturn(e, t) {
-      if (!e)
-        throw new ReferenceError(
-          "this hasn't been initialised - super() hasn't been called"
-        )
-      return !t || ('object' != typeof t && 'function' != typeof t) ? e : t
-    }
-    function Wrapper_inherits(e, t) {
-      if ('function' != typeof t && null !== t)
-        throw new TypeError(
-          'Super expression must either be null or a function, not ' + typeof t
-        )
-      ;(e.prototype = Object.create(t && t.prototype, {
-        constructor: {
-          value: e,
-          enumerable: !1,
-          writable: !0,
-          configurable: !0,
-        },
-      })),
-        t &&
-          (Object.setPrototypeOf
-            ? Object.setPrototypeOf(e, t)
-            : (e.__proto__ = t))
-    }
-    var ae = (function(e) {
-      function Wrapper() {
-        return (
-          Wrapper_classCallCheck(this, Wrapper),
-          Wrapper_possibleConstructorReturn(
-            this,
-            (Wrapper.__proto__ || Object.getPrototypeOf(Wrapper)).apply(
-              this,
-              arguments
-            )
-          )
-        )
-      }
-      return (
-        Wrapper_inherits(Wrapper, o['Component']),
-        ie(Wrapper, [
-          {
-            key: 'componentDidCatch',
-            value: function componentDidCatch(e) {
-              this.props.onError(e)
-            },
-          },
-          {
-            key: 'render',
-            value: function render() {
-              return this.props.children
-            },
-          },
-        ]),
-        Wrapper
-      )
-    })()
-    ae.propTypes = {
-      children: u.a.node.isRequired,
-      onError: u.a.func.isRequired,
-    }
-    var oe = ae,
-      se = n(39),
-      le = n(40),
-      ue = n.n(le),
-      ce = function unsemicolon(e) {
+      re = n(120),
+      ie = n(123),
+      ae = n.n(ie),
+      oe = n(39),
+      se = n(40),
+      le = n.n(se),
+      ue = function unsemicolon(e) {
         return e.replace(/;\s*$/, '')
       }
     function splitExampleCode(e) {
       var t = void 0
       try {
-        t = se.parse(e, { ecmaVersion: 2019 })
+        t = oe.parse(e, { ecmaVersion: 2019 })
       } catch (t) {
         return { head: '', example: e }
       }
-      var n = ue()(t.body.reverse(), { type: 'ExpressionStatement' })
+      var n = le()(t.body.reverse(), { type: 'ExpressionStatement' })
       if (!n) return { head: '', example: e }
       var r = n.start,
         i = n.end,
-        a = ce(e.substring(0, r))
+        a = ue(e.substring(0, r))
       return {
         head: a,
-        example: a + ';\nreturn (' + ce(e.substring(r, i)) + ');',
+        example: a + ';\nreturn (' + ue(e.substring(r, i)) + ');',
       }
     }
-    var pe = (function() {
+    var ce = (function() {
       function defineProperties(e, t) {
         for (var n = 0; n < t.length; n++) {
           var r = t[n]
@@ -34631,14 +34338,14 @@ object-assign
             ? Object.setPrototypeOf(e, t)
             : (e.__proto__ = t))
     }
-    var fe = s.a.Fragment ? 'React.Fragment' : 'div',
-      he = function _compileCode(e, t) {
+    var pe = s.a.Fragment ? 'React.Fragment' : 'div',
+      fe = function _compileCode(e, t) {
         return Object(re.a)(e, t).code
       },
-      de = function wrapCodeInFragment(e) {
-        return '<' + fe + '>' + e + '</' + fe + '>;'
+      he = function wrapCodeInFragment(e) {
+        return '<' + pe + '>' + e + '</' + pe + '>;'
       },
-      me = (function(e) {
+      de = (function(e) {
         function StateHolder() {
           var e, t, n
           ReactExample_classCallCheck(this, StateHolder)
@@ -34661,7 +34368,7 @@ object-assign
         }
         return (
           ReactExample_inherits(StateHolder, o['Component']),
-          pe(StateHolder, [
+          ce(StateHolder, [
             {
               key: 'render',
               value: function render() {
@@ -34672,11 +34379,11 @@ object-assign
           StateHolder
         )
       })()
-    me.propTypes = {
+    de.propTypes = {
       component: u.a.func.isRequired,
       initialState: u.a.object.isRequired,
     }
-    var ge = (function(e) {
+    var me = (function(e) {
       function ReactExample() {
         return (
           ReactExample_classCallCheck(this, ReactExample),
@@ -34690,7 +34397,7 @@ object-assign
       }
       return (
         ReactExample_inherits(ReactExample, o['Component']),
-        pe(ReactExample, [
+        ce(ReactExample, [
           {
             key: 'shouldComponentUpdate',
             value: function shouldComponentUpdate(e) {
@@ -34721,8 +34428,8 @@ object-assign
             key: 'compileCode',
             value: function compileCode(e) {
               try {
-                var t = e.trim().match(/^</) ? de(e) : e
-                return he(t, this.props.compilerConfig)
+                var t = e.trim().match(/^</) ? he(e) : e
+                return fe(t, this.props.compilerConfig)
               } catch (e) {
                 this.props.onError && this.props.onError(e)
               }
@@ -34740,9 +34447,9 @@ object-assign
                 i = this.getExampleInitialState(n),
                 a = this.getExampleComponent(r)
               return s.a.createElement(
-                oe,
+                ae.a,
                 { onError: this.props.onError },
-                s.a.createElement(me, { component: a, initialState: i })
+                s.a.createElement(de, { component: a, initialState: i })
               )
             },
           },
@@ -34750,15 +34457,15 @@ object-assign
         ReactExample
       )
     })()
-    ;(ge.propTypes = {
+    ;(me.propTypes = {
       code: u.a.string.isRequired,
       evalInContext: u.a.func.isRequired,
       onError: u.a.func.isRequired,
       compilerConfig: u.a.object,
     }),
-      (ge.contextTypes = {})
-    var ye = ge,
-      ve = (function() {
+      (me.contextTypes = {})
+    var ge = me,
+      ye = (function() {
         function defineProperties(e, t) {
           for (var n = 0; n < t.length; n++) {
             var r = t[n]
@@ -34805,8 +34512,8 @@ object-assign
             ? Object.setPrototypeOf(e, t)
             : (e.__proto__ = t))
     }
-    var be = s.a.Fragment ? s.a.Fragment : 'div',
-      _e = (function(e) {
+    var ve = s.a.Fragment ? s.a.Fragment : 'div',
+      be = (function(e) {
         function Preview() {
           var e, t, n
           Preview_classCallCheck(this, Preview)
@@ -34832,7 +34539,7 @@ object-assign
         }
         return (
           Preview_inherits(Preview, o['Component']),
-          ve(Preview, [
+          ye(Preview, [
             {
               key: 'componentDidMount',
               value: function componentDidMount() {
@@ -34873,7 +34580,7 @@ object-assign
                 this.setState({ error: null })
                 var t = this.props.code
                 if (t) {
-                  var n = s.a.createElement(ye, {
+                  var n = s.a.createElement(ge, {
                     code: t,
                     evalInContext: this.props.evalInContext,
                     onError: this.handleError,
@@ -34896,7 +34603,7 @@ object-assign
                 var e = this,
                   t = this.state.error
                 return s.a.createElement(
-                  be,
+                  ve,
                   null,
                   s.a.createElement('div', {
                     ref: function ref(t) {
@@ -34911,17 +34618,17 @@ object-assign
           Preview
         )
       })()
-    ;(_e.propTypes = {
+    ;(be.propTypes = {
       code: u.a.string.isRequired,
       evalInContext: u.a.func.isRequired,
     }),
-      (_e.contextTypes = {
+      (be.contextTypes = {
         config: u.a.object.isRequired,
         codeRevision: u.a.number.isRequired,
       })
-    var xe = _e,
-      Se = n(23),
-      we =
+    var _e = be,
+      xe = n(21),
+      Se =
         Object.assign ||
         function(e) {
           for (var t = 1; t < arguments.length; t++) {
@@ -34956,7 +34663,7 @@ object-assign
           if (a && o) {
             if (i && a !== r) return null
             var c = l.onClick
-            ;(u = we({}, l, {
+            ;(u = Se({}, l, {
               name: a,
               active: r && a === r,
               onClick:
@@ -34973,7 +34680,7 @@ object-assign
             })),
               (e = o)
           }
-          return s.a.createElement(e, we({ key: t }, u))
+          return s.a.createElement(e, Se({ key: t }, u))
         })
         .filter(Boolean)
       return 0 === p.length
@@ -34988,7 +34695,7 @@ object-assign
       className: u.a.string,
     }),
       (Slot.contextTypes = { slots: u.a.object.isRequired })
-    var ke =
+    var we =
       Object.assign ||
       function(e) {
         for (var t = 1; t < arguments.length; t++) {
@@ -35020,7 +34727,7 @@ object-assign
         { className: t.root },
         s.a.createElement(
           'div',
-          ke({ className: T()(t.preview, u) }, c, { 'data-preview': n }),
+          we({ className: T()(t.preview, u) }, c, { 'data-preview': n }),
           r
         ),
         s.a.createElement(
@@ -35041,7 +34748,7 @@ object-assign
       tabBody: u.a.node.isRequired,
       toolbar: u.a.node.isRequired,
     }
-    var Ee = Object(c.a)(function styles(e) {
+    var ke = Object(c.a)(function styles(e) {
         var t = e.space,
           n = e.color,
           r = e.borderRadius
@@ -35059,24 +34766,24 @@ object-assign
           tab: {},
         }
       })(PlaygroundRenderer),
-      Ce = Object.freeze({
+      Ee = Object.freeze({
         all: 'all',
         section: 'section',
         component: 'component',
         example: 'example',
         notFound: 'notFound',
       }),
+      Ce = Object.freeze({
+        hide: 'hide',
+        collapse: 'collapse',
+        expand: 'expand',
+      }),
       Re = Object.freeze({
         hide: 'hide',
         collapse: 'collapse',
         expand: 'expand',
       }),
-      Pe = Object.freeze({
-        hide: 'hide',
-        collapse: 'collapse',
-        expand: 'expand',
-      }),
-      Te = (function() {
+      Pe = (function() {
         function defineProperties(e, t) {
           for (var n = 0; n < t.length; n++) {
             var r = t[n]
@@ -35123,7 +34830,7 @@ object-assign
             ? Object.setPrototypeOf(e, t)
             : (e.__proto__ = t))
     }
-    var Oe = (function(e) {
+    var Te = (function(e) {
       function Playground(e, t) {
         Playground_classCallCheck(this, Playground)
         var n = Playground_possibleConstructorReturn(
@@ -35138,7 +34845,7 @@ object-assign
           i = e.settings,
           a = e.exampleMode,
           o = t.config,
-          s = a === Re.expand,
+          s = a === Ce.expand,
           l = void 0 !== i.showcode ? i.showcode : s
         return (
           (n.state = { code: r, prevCode: r, activeTab: l ? B : void 0 }),
@@ -35149,7 +34856,7 @@ object-assign
       }
       return (
         Playground_inherits(Playground, o['Component']),
-        Te(
+        Pe(
           Playground,
           [
             {
@@ -35185,12 +34892,12 @@ object-assign
                   l = r.settings,
                   u = r.exampleMode,
                   c = this.context.displayMode,
-                  p = u === Re.hide,
+                  p = u === Ce.hide,
                   f = l.noeditor || p,
-                  h = s.a.createElement(xe, { code: t, evalInContext: i })
+                  h = s.a.createElement(_e, { code: t, evalInContext: i })
                 return f
-                  ? s.a.createElement(Se.a, null, h)
-                  : s.a.createElement(Ee, {
+                  ? s.a.createElement(xe.a, null, h)
+                  : s.a.createElement(ke, {
                       name: o,
                       preview: h,
                       previewProps: l.props || {},
@@ -35209,7 +34916,7 @@ object-assign
                         name: 'exampleToolbar',
                         props: {
                           name: o,
-                          isolated: c === Ce.example,
+                          isolated: c === Ee.example,
                           example: a,
                         },
                       }),
@@ -35230,7 +34937,7 @@ object-assign
         Playground
       )
     })()
-    ;(Oe.propTypes = {
+    ;(Te.propTypes = {
       code: u.a.string.isRequired,
       evalInContext: u.a.func.isRequired,
       index: u.a.number.isRequired,
@@ -35238,11 +34945,11 @@ object-assign
       exampleMode: u.a.string.isRequired,
       settings: u.a.object,
     }),
-      (Oe.contextTypes = {
+      (Te.contextTypes = {
         config: u.a.object.isRequired,
         displayMode: u.a.string,
       })
-    var Ae = (function polyfill(e) {
+    var Oe = (function polyfill(e) {
       var t = e.prototype
       if (!t || !t.isReactComponent)
         throw new Error('Can only polyfill class components')
@@ -35306,7 +35013,7 @@ object-assign
         }
       }
       return e
-    })(Oe)
+    })(Te)
     function ExamplesRenderer(e) {
       var t = e.classes,
         n = e.children
@@ -35316,7 +35023,7 @@ object-assign
       classes: u.a.object.isRequired,
       children: u.a.node,
     }
-    var je = Object(c.a)(function styles() {
+    var Ae = Object(c.a)(function styles() {
       return { root: {} }
     })(ExamplesRenderer)
     function Examples(e, t) {
@@ -35325,12 +35032,12 @@ object-assign
         i = e.exampleMode,
         a = t.codeRevision
       return s.a.createElement(
-        je,
+        Ae,
         null,
         n.map(function(e, t) {
           switch (e.type) {
             case 'code':
-              return s.a.createElement(Ae, {
+              return s.a.createElement(Oe, {
                 code: e.content,
                 evalInContext: e.evalInContext,
                 key: a + '/' + t,
@@ -35353,7 +35060,7 @@ object-assign
       exampleMode: u.a.string.isRequired,
     }),
       (Examples.contextTypes = { codeRevision: u.a.number.isRequired })
-    var Ie = n(20)
+    var je = n(20)
     function SectionHeadingRenderer(e) {
       var t,
         n,
@@ -35385,7 +35092,7 @@ object-assign
         'div',
         { className: i.wrapper },
         s.a.createElement(
-          Ie.a,
+          je.a,
           { level: f, id: l },
           s.a.createElement('a', { href: u, className: h }, a)
         ),
@@ -35401,7 +35108,7 @@ object-assign
       depth: u.a.number.isRequired,
       deprecated: u.a.bool,
     }
-    var Me = Object(c.a)(function styles(e) {
+    var Ie = Object(c.a)(function styles(e) {
         var t = e.color
         return {
           wrapper: {
@@ -35424,7 +35131,7 @@ object-assign
           },
         }
       })(SectionHeadingRenderer),
-      Ne =
+      Me =
         Object.assign ||
         function(e) {
           for (var t = 1; t < arguments.length; t++) {
@@ -35460,8 +35167,8 @@ object-assign
             : { slug: i, anchor: !0 }
         )
       return s.a.createElement(
-        Me,
-        Ne(
+        Ie,
+        Me(
           {
             toolbar: s.a.createElement(Slot, { name: t, props: n }),
             id: i,
@@ -35481,10 +35188,10 @@ object-assign
       deprecated: u.a.bool,
       pagePerSection: u.a.bool,
     }
-    var Le = n(126),
-      De = n.n(Le),
-      Be = n(127),
-      Fe = n.n(Be)
+    var Ne = n(126),
+      Le = n.n(Ne),
+      De = n(127),
+      Be = n.n(De)
     function PathlineRenderer(e) {
       var t = e.classes,
         n = e.children
@@ -35498,11 +35205,11 @@ object-assign
             small: !0,
             className: t.copyButton,
             onClick: function onClick() {
-              return De()(n)
+              return Le()(n)
             },
             title: 'Copy to clipboard',
           },
-          s.a.createElement(Fe.a, null)
+          s.a.createElement(Be.a, null)
         )
       )
     }
@@ -35510,7 +35217,7 @@ object-assign
       classes: u.a.object.isRequired,
       children: u.a.string,
     }
-    var Ue = Object(c.a)(function styles(e) {
+    var Fe = Object(c.a)(function styles(e) {
       var t = e.space,
         n = e.fontFamily,
         r = e.fontSize,
@@ -35541,7 +35248,7 @@ object-assign
           'header',
           { className: t.header },
           r,
-          i && s.a.createElement(Ue, null, i)
+          i && s.a.createElement(Fe, null, i)
         ),
         (a || o) && s.a.createElement('div', { className: t.docs }, a, o),
         u &&
@@ -35567,7 +35274,7 @@ object-assign
       examples: u.a.node,
       isolated: u.a.bool,
     }
-    var qe = Object(c.a)(function styles(e) {
+    var Ue = Object(c.a)(function styles(e) {
         var t = e.color,
           n = e.fontSize,
           r = e.space
@@ -35579,7 +35286,7 @@ object-assign
           docs: { color: t.base, fontSize: n.text },
         }
       })(ReactComponentRenderer),
-      We =
+      qe =
         Object.assign ||
         function(e) {
           for (var t = 1; t < arguments.length; t++) {
@@ -35589,7 +35296,7 @@ object-assign
           }
           return e
         },
-      Ve = (function() {
+      We = (function() {
         function defineProperties(e, t) {
           for (var n = 0; n < t.length; n++) {
             var r = t[n]
@@ -35636,10 +35343,10 @@ object-assign
             ? Object.setPrototypeOf(e, t)
             : (e.__proto__ = t))
     }
-    var ze = function() {
+    var Ve = function() {
         return s.a.createElement('div', null)
       },
-      He = (function(e) {
+      ze = (function(e) {
         function ReactComponent(e, t) {
           ReactComponent_classCallCheck(this, ReactComponent)
           var n = ReactComponent_possibleConstructorReturn(
@@ -35652,13 +35359,13 @@ object-assign
             r = e.usageMode
           return (
             (n.handleTabChange = n.handleTabChange.bind(n)),
-            (n.state = { activeTab: r === Pe.expand ? F : void 0 }),
+            (n.state = { activeTab: r === Re.expand ? F : void 0 }),
             n
           )
         }
         return (
           ReactComponent_inherits(ReactComponent, o['Component']),
-          Ve(ReactComponent, [
+          We(ReactComponent, [
             {
               key: 'handleTabChange',
               value: function handleTabChange(e) {
@@ -35690,8 +35397,8 @@ object-assign
                   _ = d.tags,
                   x = void 0 === _ ? {} : _
                 if (!c) return null
-                var S = l !== Pe.hide
-                return s.a.createElement(qe, {
+                var S = l !== Re.hide
+                return s.a.createElement(Ue, {
                   name: c,
                   slug: p,
                   filepath: f,
@@ -35705,7 +35412,7 @@ object-assign
                       pagePerSection: r,
                       deprecated: !!x.deprecated,
                       slotName: 'componentToolbar',
-                      slotProps: We({}, a, { isolated: n !== Ce.all }),
+                      slotProps: qe({}, a, { isolated: n !== Ee.all }),
                       depth: o,
                     },
                     c
@@ -35717,13 +35424,13 @@ object-assign
                           name: c,
                           exampleMode: u,
                         })
-                      : s.a.createElement(ze, { name: c }),
+                      : s.a.createElement(Ve, { name: c }),
                   tabButtons:
                     S &&
                     s.a.createElement(Slot, {
                       name: 'docsTabButtons',
                       active: e,
-                      props: We({}, a, { onClick: this.handleTabChange }),
+                      props: qe({}, a, { onClick: this.handleTabChange }),
                     }),
                   tabBody: s.a.createElement(Slot, {
                     name: 'docsTabs',
@@ -35738,17 +35445,17 @@ object-assign
           ReactComponent
         )
       })()
-    ;(He.propTypes = {
+    ;(ze.propTypes = {
       component: u.a.object.isRequired,
       depth: u.a.number.isRequired,
       exampleMode: u.a.string.isRequired,
       usageMode: u.a.string.isRequired,
     }),
-      (He.contextTypes = {
+      (ze.contextTypes = {
         config: u.a.object.isRequired,
         displayMode: u.a.string,
       })
-    var Ke = He
+    var He = ze
     function ComponentsRenderer(e) {
       var t = e.children
       return s.a.createElement('div', null, t)
@@ -35762,7 +35469,7 @@ object-assign
         ComponentsRenderer,
         null,
         t.map(function(e) {
-          return s.a.createElement(Ke, {
+          return s.a.createElement(He, {
             key: e.filepath,
             component: e,
             exampleMode: r,
@@ -35823,7 +35530,7 @@ object-assign
       depth: u.a.number.isRequired,
       pagePerSection: u.a.bool,
     }
-    var Ge = Object(c.a)(function styles(e) {
+    var Ke = Object(c.a)(function styles(e) {
       return { root: { marginBottom: e.space[4] } }
     })(SectionRenderer)
     function Section(e, t) {
@@ -35852,7 +35559,7 @@ object-assign
             depth: r + 1,
           }),
         v = f && s.a.createElement(Sections, { sections: f, depth: r + 1 })
-      return s.a.createElement(Ge, {
+      return s.a.createElement(Ke, {
         description: h,
         pagePerSection: a,
         name: o,
@@ -35861,7 +35568,7 @@ object-assign
         content: g,
         components: y,
         sections: v,
-        isolated: i !== Ce.all,
+        isolated: i !== Ee.all,
         depth: r,
       })
     }
@@ -35882,14 +35589,14 @@ object-assign
       classes: u.a.object.isRequired,
       children: u.a.node,
     }
-    var $e = Object(c.a)(function styles() {
+    var Ge = Object(c.a)(function styles() {
       return { root: {} }
     })(SectionsRenderer)
     function Sections(e) {
       var t = e.sections,
         n = e.depth
       return s.a.createElement(
-        $e,
+        Ge,
         null,
         t.map(function(e, t) {
           return s.a.createElement(Section, { key: t, section: e, depth: n })
@@ -35901,7 +35608,7 @@ object-assign
       root: u.a.bool,
       depth: u.a.number.isRequired,
     }
-    var Je = n(41)
+    var $e = n(41)
     function WelcomeRenderer(e) {
       var t = e.classes,
         n = e.patterns
@@ -35917,7 +35624,7 @@ object-assign
               })
               .join('\n') +
             "\n\nCreate **styleguide.config.js** file in your project root directory like this:\n\n    module.exports = {\n      components: 'src/components/**/*.js'\n    };\n\nRead more in the [locating components guide](" +
-            Je.DOCS_COMPONENTS +
+            $e.DOCS_COMPONENTS +
             ').\n\t\t\t\t',
         })
       )
@@ -35926,7 +35633,7 @@ object-assign
       classes: u.a.object.isRequired,
       patterns: u.a.array.isRequired,
     }
-    var Xe = Object(c.a)(function styles(e) {
+    var Je = Object(c.a)(function styles(e) {
       var t = e.space
       return {
         root: { maxWidth: e.maxWidth, margin: [[0, 'auto']], padding: t[4] },
@@ -35976,7 +35683,7 @@ object-assign
       error: u.a.object.isRequired,
       info: u.a.shape({ componentStack: u.a.any.isRequired }).isRequired,
     }
-    var Qe = Object(c.a)(function styles(e) {
+    var Xe = Object(c.a)(function styles(e) {
       var t = e.fontFamily,
         n = e.fontSize,
         r = e.color
@@ -35998,10 +35705,10 @@ object-assign
       )
     }
     NotFoundRenderer.propTypes = { classes: u.a.object.isRequired }
-    var Ye = Object(c.a)(function styles(e) {
+    var Qe = Object(c.a)(function styles(e) {
         return { root: { maxWidth: e.maxWidth, margin: [[0, 'auto']] } }
       })(NotFoundRenderer),
-      Ze = (function() {
+      Ye = (function() {
         function defineProperties(e, t) {
           for (var n = 0; n < t.length; n++) {
             var r = t[n]
@@ -36049,9 +35756,9 @@ object-assign
             : (e.__proto__ = t))
     }
     function StyleGuide_hasSidebar(e, t) {
-      return e === Ce.notFound || (t && e === Ce.all)
+      return e === Ee.notFound || (t && e === Ee.all)
     }
-    var et = (function(e) {
+    var Ze = (function(e) {
       function StyleGuide() {
         var e, t, n
         StyleGuide_classCallCheck(this, StyleGuide)
@@ -36070,7 +35777,7 @@ object-assign
       }
       return (
         StyleGuide_inherits(StyleGuide, o['Component']),
-        Ze(StyleGuide, [
+        Ye(StyleGuide, [
           {
             key: 'getChildContext',
             value: function getChildContext() {
@@ -36100,18 +35807,18 @@ object-assign
                 o = e.allSections,
                 l = e.pagePerSection
               return this.state.error
-                ? s.a.createElement(Qe, {
+                ? s.a.createElement(Xe, {
                     error: this.state.error,
                     info: this.state.info,
                   })
                 : r
-                  ? s.a.createElement(Xe, { patterns: i })
+                  ? s.a.createElement(Je, { patterns: i })
                   : s.a.createElement(
                       Z,
                       {
                         title: t.title,
                         version: t.version,
-                        homepageUrl: Je.HOMEPAGE,
+                        homepageUrl: $e.HOMEPAGE,
                         toc: s.a.createElement(J, {
                           sections: o,
                           useRouterLinks: l,
@@ -36120,7 +35827,7 @@ object-assign
                       },
                       n.length
                         ? s.a.createElement(Sections, { sections: n, depth: 1 })
-                        : s.a.createElement(Ye, null)
+                        : s.a.createElement(Qe, null)
                     )
             },
           },
@@ -36128,7 +35835,7 @@ object-assign
         StyleGuide
       )
     })()
-    ;(et.propTypes = {
+    ;(Ze.propTypes = {
       codeRevision: u.a.number.isRequired,
       config: u.a.object.isRequired,
       slots: u.a.object.isRequired,
@@ -36139,28 +35846,28 @@ object-assign
       allSections: u.a.array.isRequired,
       pagePerSection: u.a.bool,
     }),
-      (et.childContextTypes = {
+      (Ze.childContextTypes = {
         codeRevision: u.a.number.isRequired,
         config: u.a.object.isRequired,
         slots: u.a.object.isRequired,
         displayMode: u.a.string,
       }),
-      (et.defaultProps = { displayMode: Ce.all })
-    var tt = et,
-      nt = n(66),
-      rt = n.n(nt)
+      (Ze.defaultProps = { displayMode: Ee.all })
+    var et = Ze,
+      tt = n(66),
+      nt = n.n(tt)
     function getPageTitle(e, t, n) {
-      if (n === Ce.notFound) return 'Page not found'
+      if (n === Ee.notFound) return 'Page not found'
       if (e.length) {
-        if (n === Ce.component || (n === Ce.example && e[0].components))
-          return rt()(e[0], 'components.0.name', e[0].name) + ' — ' + t
-        if (n === Ce.section || n === Ce.example) return e[0].name + ' — ' + t
+        if (n === Ee.component || (n === Ee.example && e[0].components))
+          return nt()(e[0], 'components.0.name', e[0].name) + ' — ' + t
+        if (n === Ee.section || n === Ee.example) return e[0].name + ' — ' + t
       }
       return t
     }
-    var it = n(128),
-      at = n.n(it),
-      ot =
+    var rt = n(128),
+      it = n.n(rt),
+      at =
         Object.assign ||
         function(e) {
           for (var t = 1; t < arguments.length; t++) {
@@ -36207,7 +35914,7 @@ object-assign
         r
       )
     }
-    var st =
+    var ot =
       Object.assign ||
       function(e) {
         for (var t = 1; t < arguments.length; t++) {
@@ -36218,10 +35925,10 @@ object-assign
         return e
       }
     function filterSectionExamples(e, t) {
-      return st({}, e, { content: [e.content[t]] })
+      return ot({}, e, { content: [e.content[t]] })
     }
     function findSection(e, t) {
-      var n = ue()(e, { name: t })
+      var n = le()(e, { name: t })
       if (n) return n
       for (var r = 0; r < e.length; r++) {
         var i = e[r]
@@ -36231,31 +35938,31 @@ object-assign
         }
       }
     }
-    var lt = n(68),
-      ut = n.n(lt),
-      ct = n(129),
-      pt = n.n(ct),
-      ft = '#/',
-      ht = /(.*)\?/
+    var st = n(71),
+      lt = n.n(st),
+      ut = n(129),
+      ct = n.n(ut),
+      pt = '#/',
+      ft = /(.*)\?/
     function trimHash(e, t) {
       if (!e) return ''
-      var n = new RegExp('^' + pt()(t || ft), 'g')
+      var n = new RegExp('^' + ct()(t || pt), 'g')
       return e.replace(n, '')
     }
-    var dt = function trimParams(e) {
-        var t = ht.exec(e)
+    var ht = function trimParams(e) {
+        var t = ft.exec(e)
         return (t && t[1]) || e
       },
-      mt = function hasInHash(e, t) {
+      dt = function hasInHash(e, t) {
         return '' !== e && e.indexOf(t) > -1
       },
-      gt = function getHash(e, t) {
-        return decodeURIComponent(dt(trimHash(e, t)))
+      mt = function getHash(e, t) {
+        return decodeURIComponent(ht(trimHash(e, t)))
       },
-      yt = function getHashAsArray(e, t) {
-        return gt(e, t).split('/')
+      gt = function getHashAsArray(e, t) {
+        return mt(e, t).split('/')
       },
-      vt = function getParameterByName(e, t) {
+      yt = function getParameterByName(e, t) {
         t = t.replace(/[[\]]/g, '\\$&')
         var n = new RegExp('[?&]' + t + '(=([^&#]*)|&|#|$)').exec(e)
         return n
@@ -36265,23 +35972,23 @@ object-assign
           : null
       }
     function filterNumbers(e) {
-      return ut()(parseInt(e, 10)) && '' !== e
+      return lt()(parseInt(e, 10)) && '' !== e
     }
     function getInfoFromHash(e) {
-      var t = mt(e, '#!/')
-      if (t || mt(e, '#/')) {
-        var n = yt(e, t ? '#!/' : '#/'),
+      var t = dt(e, '#!/')
+      if (t || dt(e, '#/')) {
+        var n = gt(e, t ? '#!/' : '#/'),
           r = parseInt(n[n.length - 1], 10)
         return {
           isolate: t,
           hashArray: n.filter(filterNumbers),
           targetName: n[0],
-          targetIndex: ut()(r) ? void 0 : r,
+          targetIndex: lt()(r) ? void 0 : r,
         }
       }
       return {}
     }
-    var bt =
+    var vt =
       Object.assign ||
       function(e) {
         for (var t = 1; t < arguments.length; t++) {
@@ -36298,7 +36005,7 @@ object-assign
         o = a.targetName,
         s = a.hashArray,
         l = a.targetIndex,
-        u = a.isolate ? Ce.example : Ce.all
+        u = a.isolate ? Ee.example : Ee.all
       if ((n && !o && e[0] && ((o = e[0].name), (s = [o])), o)) {
         var c = void 0
         if (n)
@@ -36311,48 +36018,48 @@ object-assign
                 var i = !s[n + 1]
                 r.sectionDepth > 0 &&
                   i &&
-                  (r = bt({}, r, { sections: [], components: [] })),
+                  (r = vt({}, r, { sections: [], components: [] })),
                   (e = [r])
               } else e = []
             }
           }),
-            e.length || (u = Ce.notFound),
+            e.length || (u = Ee.notFound),
             (o = s[s.length - 1])
         else if ((c = filterComponentsInSectionsByExactName(e, o, !0)).length)
-          (e = c), (u = Ce.component)
+          (e = c), (u = Ee.component)
         else {
           var p = findSection(e, o)
-          ;(e = p ? [p] : []), (u = Ce.section)
+          ;(e = p ? [p] : []), (u = Ee.section)
         }
-        if (at()(l))
+        if (it()(l))
           if (1 === c.length) {
             var f = c[0].components
             ;(e = [
-              bt({}, c[0], {
+              vt({}, c[0], {
                 components: [
                   ((r = f[0]),
                   (i = l),
-                  ot({}, r, {
-                    props: ot({}, r.props, { examples: [r.props.examples[i]] }),
+                  at({}, r, {
+                    props: at({}, r.props, { examples: [r.props.examples[i]] }),
                   })),
                 ],
               }),
             ]),
-              (u = Ce.example)
+              (u = Ee.example)
           } else
             1 === e.length &&
-              ((e = [filterSectionExamples(e[0], l)]), (u = Ce.example))
+              ((e = [filterSectionExamples(e[0], l)]), (u = Ee.example))
       }
       return { sections: e, displayMode: u }
     }
-    var _t = n(130)
+    var bt = n(130)
     function globalizeComponents(e) {
       e.forEach(function(e) {
-        e.components && e.components.forEach(_t.a),
+        e.components && e.components.forEach(bt.a),
           e.sections && globalizeComponents(e.sections)
       })
     }
-    var xt =
+    var _t =
       Object.assign ||
       function(e) {
         for (var t = 1; t < arguments.length; t++) {
@@ -36369,7 +36076,7 @@ object-assign
       }
       return Array.from(e)
     }
-    var St =
+    var xt =
       Object.assign ||
       function(e) {
         for (var t = 1; t < arguments.length; t++) {
@@ -36381,12 +36088,12 @@ object-assign
       }
     function processSections(e) {
       return e.map(function(e) {
-        return St({}, e, {
+        return xt({}, e, {
           components: ((t = e.components || []),
           t.map(function(e) {
-            return xt({}, e, {
+            return _t({}, e, {
               name: e.props.displayName,
-              props: xt({}, e.props, {
+              props: _t({}, e.props, {
                 examples: [].concat(
                   processComponents_toConsumableArray(e.props.examples || []),
                   processComponents_toConsumableArray(e.props.example || [])
@@ -36424,7 +36131,7 @@ object-assign
         var h = n.pathname + n.search
         i.replaceState('', r.title, h)
       }
-      return s.a.createElement(tt, {
+      return s.a.createElement(et, {
         codeRevision: t,
         config: e.config,
         slots: U(e.config),
@@ -36436,15 +36143,15 @@ object-assign
         pagePerSection: u,
       })
     }
-    var wt = function render() {
-      var e = n(287)
+    var St = function render() {
+      var e = n(288)
       a.a.render(renderStyleguide(e, 0), document.getElementById('rsg-root'))
     }
-    window.addEventListener('hashchange', wt),
+    window.addEventListener('hashchange', St),
       window.addEventListener('hashchange', function scrollToOrigin() {
         var e = window.location.hash
-        if (mt(e, '#/') || mt(e, '#!/')) {
-          var t = vt(e, 'id'),
+        if (dt(e, '#/') || dt(e, '#!/')) {
+          var t = yt(e, 'id'),
             n = 0
           if (t) {
             var r = document.getElementById(t)
@@ -36453,6 +36160,6 @@ object-assign
           window.scrollTo(0, n)
         }
       }),
-      wt()
+      St()
   },
 ])
