@@ -17,7 +17,7 @@ const babelConfig = {
     'stage-2',
     'react',
   ],
-  plugins: ['transform-class-properties'],
+  plugins: ['transform-flow-strip-types', 'transform-class-properties'],
   comments: false,
 }
 
