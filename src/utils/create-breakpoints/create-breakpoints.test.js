@@ -1,5 +1,3 @@
-import * as React from 'react'
-import { render } from 'enzyme'
 import breakpoints from './create-breakpoints'
 
 describe('breakpoints', () => {
