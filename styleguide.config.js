@@ -1,3 +1,7 @@
+/*eslint-env node */
+
+const path = require('path')
+
 const babelRc = {
   babelrc: false,
   presets: [require('babel-preset-env'), require('babel-preset-react')],
@@ -25,6 +29,9 @@ const webpackConfig = {
 
 module.exports = {
   components: 'src/**/*.js',
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, '.styleguide/wrapper'),
+  },
   ignore: [
     '**/index.js',
     '**/*.styled.js',
