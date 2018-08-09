@@ -47,4 +47,7 @@ module.exports = {
     url: 'https://github.com/jane/jane-components',
     text: 'Contribute on GitHub',
   },
+  getExampleFilename(componentPath) {
+    return componentPath.replace(/\.js?$/, '.md')
+  },
 }

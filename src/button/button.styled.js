@@ -3,7 +3,7 @@
 import styled from 'styled-components'
 import { type ButtonProps } from './button'
 import { type Theme } from '../theme.types'
-import { fromTheme } from '../utils'
+import fromTheme from '../utils/from-theme'
 
 type StyledProps = { ...ButtonProps, theme: Theme }
 
