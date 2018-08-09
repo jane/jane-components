@@ -14,8 +14,6 @@ const SwitchBox = styled.label`
         : fromTheme('e0')};
   border-radius: 24px;
   color: white;
-  cursor: ${({ disabled }: SwitchProps) =>
-    disabled ? 'not-allowed' : 'pointer'};
   height: 33px;
   min-width: 60px;
   opacity: ${({ disabled }: SwitchProps) => (disabled ? '.5' : '1')};
@@ -47,6 +45,14 @@ const SwitchThumb = styled.div`
   width: 25px;
 `
 
+const Input = styled.input`
+  cursor: ${({ disabled }: SwitchProps) =>
+    disabled ? 'not-allowed' : 'pointer'};
+  height: 100%;
+  opacity: 0;
+  width: 100%;
+`
+
 const Switch = ({
   disabled,
   backgroundColor,
@@ -61,18 +67,13 @@ const Switch = ({
     data-testid={testID}
     {...props}
   >
-    <SwitchThumb checked={!!input.value} />
-    <input
+    <Input
       {...input}
       checked={!!input.value}
       aria-checked={!!input.value}
       type="checkbox"
-      style={{
-        opacity: 0,
-        width: '100%',
-        height: '100%',
-      }}
     />
+    <SwitchThumb checked={!!input.value} disabled={disabled} />
   </SwitchBox>
 )
 
