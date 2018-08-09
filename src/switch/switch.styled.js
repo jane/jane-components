@@ -4,7 +4,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { fromTheme } from '../utils'
 import { type SwitchProps } from './switch'
-// TODO: Add conditional passing of backgroundColor(s)
 
 const SwitchBox = styled.label`
   background-color: ${({ disabled, checked }: SwitchProps) =>
@@ -66,6 +65,7 @@ const Switch = ({
     <input
       {...input}
       checked={!!input.value}
+      aria-checked={!!input.value}
       type="checkbox"
       style={{
         opacity: 0,

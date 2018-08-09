@@ -1,8 +1,7 @@
 // @flow
 
 import * as React from 'react'
-import { ThemeProvider } from 'styled-components'
-import theme from '../theme'
+import { type Theme } from '../theme.types'
 import SwitchComponent from './switch.styled'
 
 export type SwitchProps = {
@@ -15,12 +14,11 @@ export type SwitchProps = {
   },
   name?: string,
   testID?: string,
-} & Theme
+  theme: Theme,
+}
 
 const Switch = ({ testID, ...props }: SwitchProps): React$Element<*> => (
-  <ThemeProvider theme={theme}>
-    <SwitchComponent data-testid={testID} {...props} />
-  </ThemeProvider>
+  <SwitchComponent data-testid={testID} {...props} />
 )
 
 export default Switch
