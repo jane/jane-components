@@ -17,7 +17,6 @@ const values: Values = {
   xl: 1920,
 }
 const unit: string = 'px'
-const step: number = 5
 
 const up = (key: Breakpoint): string => {
   const value = typeof values[key] === 'number' ? values[key] : key
