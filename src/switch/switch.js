@@ -3,7 +3,6 @@
 import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
 import theme from '../theme'
-import { type Theme } from '../theme.types'
 import SwitchComponent from './switch.styled'
 
 export type SwitchProps = {
@@ -13,7 +12,6 @@ export type SwitchProps = {
   input: {
     value: boolean | string,
     onClick?: () => void,
-    onChange?: () => void,
   },
   name?: string,
   testID?: string,
