@@ -4,11 +4,12 @@
 
 import * as React from 'react'
 import { shallow } from 'enzyme'
+import { create } from '../test-utils'
 import Button from './button'
 
 describe('button', (): void => {
   it('renders', (): void => {
-    expect(shallow(<Button />)).toMatchSnapshot()
+    expect(create(<Button />)).toMatchSnapshot()
   })
 
   it('has onClick when passed', (): void => {
@@ -26,7 +27,6 @@ describe('button', (): void => {
   })
 
   it('has box-shadow with type', (): void => {
-    const button = shallow(<Button type="warning">foo</Button>)
-    expect(button).toMatchSnapshot()
+    expect(create(<Button type="warning">foo</Button>)).toMatchSnapshot()
   })
 })

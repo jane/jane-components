@@ -78,6 +78,7 @@
     "react": "16.4.2",
     "react-dom": "16.4.2",
     "react-styleguidist": "7.2.1",
+    "react-test-renderer": "16.4.2",
     "rollup": "0.64.1",
     "rollup-plugin-babel": "3.0.7",
     "rollup-plugin-commonjs": "9.1.5",
@@ -101,6 +102,7 @@
       "<rootDir>/src/**/__tests__/**/*.js",
       "<rootDir>/src/**/?(*.)(spec|test).js"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/styled.js",
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
