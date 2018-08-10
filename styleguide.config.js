@@ -53,7 +53,6 @@ module.exports = {
     Wrapper: join(__dirname, '.styleguide/wrapper'),
   },
   printBuildInstructions() {},
-  pagePerSection: true,
   ignore: [
     '**/index.js',
     '**/*.styled.js',
