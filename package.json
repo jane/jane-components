@@ -29,7 +29,7 @@
     "test:flow": "flow check",
     "test:jest": "node config/jest/test.js --env=jsdom",
     "test:lint": "eslint src config *.js",
-    "update-types": "flow-typed update-cache && flow-typed install -o -i dev"
+    "update-types": "flow-typed update-cache && flow-typed install -o"
   },
   "homepage": "https://jane.github.io/jane-components",
   "repository": {
