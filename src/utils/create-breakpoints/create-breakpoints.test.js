@@ -2,12 +2,11 @@
 
 /* eslint-env jest */
 
-import breakpoints from './create-breakpoints'
+import breakpoints, { type Breakpoint } from './create-breakpoints'
 
 describe('breakpoints', (): void => {
   breakpoints.keys.forEach(
-    // eslint-disable-next-line flowtype/no-weak-types
-    (key: any): void => {
+    (key: Breakpoint): void => {
       test(`up with ${key} returns correct media query`, (): void => {
         expect(breakpoints.up(key)).toEqual(
           `@media (min-width:${breakpoints.values[key]}px)`
