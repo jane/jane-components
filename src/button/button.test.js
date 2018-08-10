@@ -24,4 +24,9 @@ describe('button', (): void => {
     button.simulate('click')
     expect(handleClick).toHaveBeenCalled()
   })
+
+  it('has box-shadow with type', (): void => {
+    const button = shallow(<Button type="warning">foo</Button>)
+    expect(button).toMatchSnapshot()
+  })
 })
