@@ -33,7 +33,7 @@ export type GridProps = {
    * Defines the `align-content` style property.
    * It's applied for all screen sizes.
    */
-  alignContent:  // eslint-disable-line
+  alignContent:
     | 'stretch'
     | 'center'
     | 'flex-start'
@@ -73,7 +73,7 @@ export type GridProps = {
    * Defines the `justify-content` style property.
    * It is applied for all screen sizes.
    */
-  justify:  // eslint-disable-line
+  justify:
     | 'flex-start'
     | 'center'
     | 'flex-end'
