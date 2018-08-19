@@ -401,9 +401,9 @@ exports[`grid handles direction 3`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: colulmn;
-  -ms-flex-direction: colulmn;
-  flex-direction: colulmn;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -419,7 +419,7 @@ exports[`grid handles direction 3`] = `
 
 <div
   className="c0"
-  direction="colulmn"
+  direction="column"
 />
 `;
 

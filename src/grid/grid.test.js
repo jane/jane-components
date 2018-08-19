@@ -6,7 +6,7 @@ import * as React from 'react'
 import { create } from '../test-utils'
 import Grid, { GUTTERS, GRID_SIZES } from './grid'
 
-const DIRECTION = ['row', 'row-reverse', 'colulmn', 'column-reverse']
+const DIRECTION = ['row', 'row-reverse', 'column', 'column-reverse']
 const ALIGN_CONTENT = [
   'stretch',
   'center',
