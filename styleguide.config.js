@@ -57,12 +57,10 @@ module.exports = {
   sections: [
     {
       name: 'Components',
-      description: 'UI Components you can use to build your apps',
       components: 'src/!(utils)/*.js',
     },
     {
       name: 'Utils',
-      description: 'Other exports from our library that you might find useful',
       components: 'src/utils/**/*.js',
     },
   ],

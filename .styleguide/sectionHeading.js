@@ -18,7 +18,6 @@ function SectionHeadingRenderer({
   const sectionNameClasses = cx(classes.sectionName, {
     [classes.isDeprecated]: deprecated,
   })
-  console.log('this is running', headingLevel)
 
   return (
     <div
