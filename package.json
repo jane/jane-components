@@ -57,6 +57,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-2": "6.24.1",
+    "classnames": "2.2.6",
     "coveralls": "3.0.2",
     "enzyme": "3.4.1",
     "enzyme-adapter-react-16": "1.2.0",
