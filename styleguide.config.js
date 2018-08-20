@@ -48,11 +48,20 @@ const webpackConfig = {
 }
 
 module.exports = {
-  components: 'src/**/*.js',
   styleguideComponents: {
     Wrapper: join(__dirname, '.styleguide/wrapper'),
   },
   printBuildInstructions() {},
+  sections: [
+    {
+      name: 'Components',
+      components: 'src/!(utils)/*.js',
+    },
+    {
+      name: 'Utils',
+      components: 'src/utils/**/*.js',
+    },
+  ],
   ignore: [
     '**/index.js',
     '**/*.styled.js',
