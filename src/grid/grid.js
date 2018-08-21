@@ -6,12 +6,12 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
-import breakpoints from '../utils/create-breakpoints'
+import { createBreakpoints as breakpoints } from '../utils'
 
-const GUTTERS = [0, 8, 16, 24, 32, 40]
+export const GUTTERS = [0, 8, 16, 24, 32, 40]
 export type Gutters = 0 | 8 | 16 | 24 | 32 | 40
 
-const GRID_SIZES = ['auto', true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+export const GRID_SIZES = ['auto', true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 export type GridSizes =
   | 'auto'
   | true
@@ -33,7 +33,7 @@ export type GridProps = {
    * Defines the `align-content` style property.
    * It's applied for all screen sizes.
    */
-  alignContent:  // eslint-disable-line
+  alignContent:
     | 'stretch'
     | 'center'
     | 'flex-start'
@@ -73,7 +73,7 @@ export type GridProps = {
    * Defines the `justify-content` style property.
    * It is applied for all screen sizes.
    */
-  justify:  // eslint-disable-line
+  justify:
     | 'flex-start'
     | 'center'
     | 'flex-end'

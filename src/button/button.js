@@ -13,10 +13,8 @@ export type ButtonProps = {
   fullWidth?: boolean,
 }
 
-const Button = ({ testID, ...props }: ButtonProps): React$Element<*> => {
-  const ButtonComponent = StandardButton
-
-  return <ButtonComponent data-testid={testID} {...props} />
-}
+const Button = ({ testID, ...props }: ButtonProps): React$Element<*> => (
+  <StandardButton data-testid={testID} {...props} />
+)
 
 export default Button

@@ -1,6 +1,26 @@
-/*eslint-env node */
+/* eslint-env node */
 
-const path = require('path')
+const { join } = require('path')
+const { version } = require('./package.json')
+
+const theme = {
+  fontFamily: {
+    base: [
+      '"Montserrat"',
+      '"Helvetica Neue"',
+      '"Noto Sans"',
+      'sans-serif',
+    ].join(', '),
+    monospace: [
+      '"Hasklig"',
+      '"Hack"',
+      '"Fira Code"',
+      '"Fantasque Sans Mono"',
+      '"Menlo"',
+      'monospace',
+    ].join(', '),
+  },
+}
 
 const babelRc = {
   babelrc: false,
@@ -30,18 +50,19 @@ const webpackConfig = {
 module.exports = {
   components: 'src/**/*.js',
   styleguideComponents: {
-    Wrapper: path.join(__dirname, '.styleguide/wrapper'),
+    Wrapper: join(__dirname, '.styleguide/wrapper'),
   },
+  printBuildInstructions() {},
   ignore: [
     '**/index.js',
     '**/*.styled.js',
     '**/*.types.js',
     '**/*.test.js',
+    '**/test-utils.js',
     '**/theme.js',
-    '**/utils.js',
   ],
   webpackConfig,
-  theme: {},
+  theme,
   styleguideDir: 'docs',
   ribbon: {
     url: 'https://github.com/jane/jane-components',
@@ -50,4 +71,6 @@ module.exports = {
   getExampleFilename(componentPath) {
     return componentPath.replace(/\.js?$/, '.md')
   },
+  title: 'Jane Components',
+  version,
 }
