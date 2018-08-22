@@ -10,7 +10,7 @@ export type SwitchProps = {
   disabled?: boolean,
   input: {
     value: boolean | string,
-    onClick?: () => void,
+    onChange?: () => void,
   },
   name?: string,
   testID?: string,

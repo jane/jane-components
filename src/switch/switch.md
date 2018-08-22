@@ -6,7 +6,7 @@ initialState = {checked: false};
     disabled={false}
     input={{
       value: state.checked,
-      onClick: () => setState((prevState) => ({ checked: !prevState.checked })),
+      onChange: () => setState((prevState) => ({ checked: !prevState.checked })),
     }}
     checked={state.checked}
   />

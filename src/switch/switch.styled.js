@@ -2,7 +2,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import { fromTheme } from '../utils'
+import fromTheme from '../utils/from-theme'
 import { type SwitchProps } from './switch'
 
 const SwitchBox = styled.label`
