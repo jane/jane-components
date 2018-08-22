@@ -17,11 +17,12 @@ describe('switch', (): void => {
     value: true,
     onChange: handleClick,
   }
+
   it('renders', (): void => {
     expect(create(<Switch input={input} />)).toMatchSnapshot()
   })
-  it('renders with disabled styles', (): void => {
-    expect(create(<Switch input={inputTrue} disabled />)).toMatchSnapshot()
+  it('renders differently when checked', (): void => {
+    expect(create(<Switch input={inputTrue} checked />)).toMatchSnapshot()
   })
   it('handles onChange on the input to toggle on', (): void => {
     const sc = mount(<Switch input={input} checked={false} />)

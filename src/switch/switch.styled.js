@@ -3,10 +3,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import fromTheme from '../utils/from-theme'
+import { type Theme } from '../theme.types'
 import { type SwitchProps } from './switch'
 
+type StyledProps = { ...SwitchProps, theme: Theme }
+
 const SwitchBox = styled.label`
-  background-color: ${({ disabled, checked }: SwitchProps) =>
+  background-color: ${({ disabled, checked }: StyledProps) =>
     disabled
       ? fromTheme('e0')
       : checked
@@ -16,13 +19,13 @@ const SwitchBox = styled.label`
   color: white;
   height: 33px;
   min-width: 60px;
-  opacity: ${({ disabled }: SwitchProps) => (disabled ? '.5' : '1')};
+  opacity: ${({ disabled }: StyledProps) => (disabled ? '.5' : '1')};
   position: relative;
   transition: background-color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
   width: 60px;
-  ${({ disabled }: SwitchProps) => (disabled ? '' : 'opacity: 40%')};
+  ${({ disabled }: StyledProps) => (disabled ? '' : 'opacity: 40%')};
   &:hover {
-    background-color: ${({ disabled, checked }: SwitchProps) =>
+    background-color: ${({ disabled, checked }: StyledProps) =>
       disabled
         ? fromTheme('c')
         : checked
@@ -34,10 +37,10 @@ const SwitchBox = styled.label`
 const SwitchThumb = styled.div`
   background-color: white;
   border-radius: 24px;
-  cursor: ${({ disabled }: SwitchProps) =>
+  cursor: ${({ disabled }: StyledProps) =>
     disabled ? 'not-allowed' : 'pointer'};
   height: 25px;
-  left: ${({ checked }: SwitchProps) =>
+  left: ${({ checked }: StyledProps) =>
     checked ? 'calc(100% - 25px - 4px)' : '4px'};
   position: absolute;
   top: 4px;
@@ -46,7 +49,7 @@ const SwitchThumb = styled.div`
 `
 
 const Input = styled.input`
-  cursor: ${({ disabled }: SwitchProps) =>
+  cursor: ${({ disabled }: StyledProps) =>
     disabled ? 'not-allowed' : 'pointer'};
   height: 100%;
   opacity: 0;
