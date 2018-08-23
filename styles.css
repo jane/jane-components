@@ -1,0 +1,43 @@
+/***
+ Font & Icon Colors
+ ***/
+
+ /* Version Number */
+ div .rsg--version-46 {
+   color: #444444;
+ }
+
+/* Sidebar Styles */
+div.rsg--sidebar-4 {
+  border: #f3f3f3de solid;
+  border-width: 0 4px 0 0;
+  width: 230px;
+}
+
+/* Code Preview styles */
+
+/* Attributes */
+span.rsg--name-60,  div.cm-s-base16-light span.cm-attribute {
+  color: #4b68bdde;
+}
+div.cm-s-base16-light span.cm-tag {
+    color: #4b68bd;
+}
+
+/* Variables */
+div.cm-s-base16-light span.cm-variable {
+    color: #59a99f;
+}
+
+/* Strings */
+div.cm-s-base16-light span.cm-string {
+    color: #F5941C;
+}
+
+div.cm-s-base16-light span.cm-def {
+    color: #DB8419;
+}
+/* Base color (parens, brackets, etc) */
+div.cm-s-base16-light.CodeMirror {
+    color: #4e4e4e;
+}
