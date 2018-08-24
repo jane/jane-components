@@ -20,6 +20,13 @@ const theme = {
       'monospace',
     ].join(', '),
   },
+  color: {
+    codeBackground: '#F9F9F9',
+    linkHover: '#464646',
+    link: '#000',
+    sidebarBackground: '#fff',
+    ribbonBackground: '#4b68bdde',
+  },
 }
 
 const babelRc = {
@@ -48,6 +55,16 @@ const webpackConfig = {
 }
 
 module.exports = {
+  template: {
+    head: {
+      links: [
+        {
+          rel: 'stylesheet',
+          href: './styles.css',
+        },
+      ],
+    },
+  },
   components: 'src/**/*.js',
   styleguideComponents: {
     Wrapper: join(__dirname, '.styleguide/wrapper'),
