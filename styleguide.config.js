@@ -83,7 +83,7 @@ module.exports = {
   styleguideDir: 'docs',
   ribbon: {
     url: 'https://github.com/jane/jane-components',
-    text: 'Contribute on GitHub',
+    text: 'GitHub',
   },
   getExampleFilename(componentPath) {
     return componentPath.replace(/\.js?$/, '.md')
