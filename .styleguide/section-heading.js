@@ -5,7 +5,7 @@ import Heading from 'rsg-components/Heading'
 import Styled from 'rsg-components/Styled'
 import { colors } from '../src/theme.js'
 
-function SectionHeadingRenderer({
+const SectionHeadingRenderer = ({
   classes,
   children,
   toolbar,
@@ -13,7 +13,7 @@ function SectionHeadingRenderer({
   href,
   depth,
   deprecated,
-}) {
+}) => {
   const headingLevel = Math.min(6, depth)
   const sectionNameClasses = cx(classes.sectionName, {
     [classes.isDeprecated]: deprecated,
