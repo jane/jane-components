@@ -1,19 +1,32 @@
+// @flow
+
+/* eslint-disable flowtype/no-weak-types */
+
 import * as React from 'react'
-import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Heading from 'rsg-components/Heading'
-import Styled from 'rsg-components/Styled'
+import Heading from 'react-styleguidist/lib/rsg-components/Heading/index'
+import Styled from 'react-styleguidist/lib/rsg-components/Styled/index'
 import { colors } from '../src/theme.js'
 
+type SectionHeaderProps = {
+  children: React.Node,
+  classes: Object,
+  deprecated?: boolean,
+  depth: number,
+  href: string,
+  id: string,
+  toolbar: React.Node,
+}
+
 const SectionHeadingRenderer = ({
-  classes,
   children,
-  toolbar,
-  id,
-  href,
-  depth,
+  classes,
   deprecated,
-}) => {
+  depth,
+  href,
+  id,
+  toolbar,
+}: SectionHeaderProps): React.Node => {
   const headingLevel = Math.min(6, depth)
   const sectionNameClasses = cx(classes.sectionName, {
     [classes.isDeprecated]: deprecated,
@@ -45,7 +58,8 @@ const SectionHeadingRenderer = ({
   )
 }
 
-const styles = ({ color, space }) => ({
+type StylesObj = { color: Object, space: Array<*> }
+const styles = ({ color, space }: StylesObj) => ({
   wrapper: {
     display: 'flex',
     flexDirection: 'row',
@@ -69,15 +83,5 @@ const styles = ({ color, space }) => ({
     },
   },
 })
-
-SectionHeadingRenderer.propTypes = {
-  classes: PropTypes.object.isRequired,
-  children: PropTypes.node,
-  toolbar: PropTypes.node,
-  id: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  depth: PropTypes.number.isRequired,
-  deprecated: PropTypes.bool,
-}
 
 export default Styled(styles)(SectionHeadingRenderer)
