@@ -20,6 +20,13 @@ const theme = {
       'monospace',
     ].join(', '),
   },
+  color: {
+    codeBackground: '#F9F9F9',
+    linkHover: '#464646',
+    link: '#000',
+    sidebarBackground: '#fff',
+    ribbonBackground: '#4b68bdde',
+  },
 }
 
 const babelRc = {
@@ -48,9 +55,20 @@ const webpackConfig = {
 }
 
 module.exports = {
+  template: {
+    head: {
+      links: [
+        {
+          rel: 'stylesheet',
+          href: './styles.css',
+        },
+      ],
+    },
+  },
+  components: 'src/**/*.js',
   styleguideComponents: {
     Wrapper: join(__dirname, '.styleguide/wrapper'),
-    SectionHeadingRenderer: join(__dirname, '.styleguide/sectionHeading'),
+    SectionHeadingRenderer: join(__dirname, '.styleguide/section-heading'),
   },
   printBuildInstructions() {},
   pagePerSection: true,
@@ -73,11 +91,11 @@ module.exports = {
     '**/theme.js',
   ],
   webpackConfig,
-  theme: {},
+  theme,
   styleguideDir: 'docs',
   ribbon: {
     url: 'https://github.com/jane/jane-components',
-    text: 'Contribute on GitHub',
+    text: 'GitHub',
   },
   getExampleFilename(componentPath) {
     return componentPath.replace(/\.js?$/, '.md')
