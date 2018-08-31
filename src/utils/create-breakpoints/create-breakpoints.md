@@ -1,4 +1,4 @@
-import breakpoints from 'utils/breakpoints'
+`import breakpoints from 'jane-components/lib/utils/breakpoints'`
 
 You can access the following from breakpoints:
 - keys: array of breakpoint keys (see next line),
