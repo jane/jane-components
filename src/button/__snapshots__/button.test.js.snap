@@ -18,8 +18,7 @@ exports[`button has box-shadow with type 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   font-size: 16px;
-  line-height: 19px;
-  padding: 12px 28px;
+  padding: 10px 28px;
   box-shadow: 0 0 0 4px #F5941C;
   position: relative;
   -webkit-text-decoration: none;
@@ -75,8 +74,7 @@ exports[`button renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   font-size: 16px;
-  line-height: 19px;
-  padding: 12px 28px;
+  padding: 10px 28px;
   position: relative;
   -webkit-text-decoration: none;
   text-decoration: none;
