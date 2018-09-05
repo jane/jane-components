@@ -19,8 +19,7 @@ export default styled.button`
   display: flex;
   justify-content: center;
   font-size: 16px;
-  line-height: 19px;
-  padding: 12px 28px;
+  padding: 10px 28px;
   box-shadow: ${({ type, theme }: StyledProps) =>
     type ? `0 0 0 4px ${theme.buttonTypes[type]}` : ''};
   position: relative;
