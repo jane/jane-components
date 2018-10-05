@@ -31,13 +31,11 @@ const theme = {
 
 const babelRc = {
   babelrc: false,
-  presets: [require('babel-preset-env'), require('babel-preset-react')],
+  presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-flow'],
   plugins: [
-    require('babel-plugin-transform-flow-strip-types'),
-    require('babel-plugin-transform-class-properties'),
-    require('babel-plugin-transform-object-rest-spread'),
-    require('babel-plugin-styled-components').default,
-    require('babel-plugin-styled-name').default,
+    '@babel/plugin-proposal-class-properties',
+    'babel-plugin-styled-components',
+    'babel-plugin-styled-name',
   ],
 }
 

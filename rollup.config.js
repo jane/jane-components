@@ -9,15 +9,15 @@ const babelConfig = {
   babelrc: false,
   presets: [
     [
-      'env',
+      '@babel/preset-env',
       {
         modules: false,
       },
     ],
-    'stage-2',
-    'react',
+    '@babel/preset-react',
+    '@babel/preset-flow',
   ],
-  plugins: ['transform-flow-strip-types', 'transform-class-properties'],
+  plugins: ['@babel/plugin-proposal-class-properties'],
   comments: false,
 }
 
