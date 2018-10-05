@@ -1,12 +1,11 @@
 {
   "presets": [
-    "env",
-    "stage-2",
-    "react"
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-flow"
   ],
   "plugins": [
-    "transform-flow-strip-types",
-    "transform-class-properties"
+    "@babel/plugin-proposal-class-properties"
   ],
   "comments": false
 }
