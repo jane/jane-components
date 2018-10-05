@@ -1,7 +1,7 @@
 {
   "name": "jane-components",
   "description": "Jane's React component library",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Jane web team",
   "license": "MIT",
   "main": "dist/index.js",
