@@ -3651,13 +3651,13 @@ exports[`grid handles gutters 6`] = `
 `;
 
 exports[`grid handles item 1`] = `
-<styled.div
+<ForwardRef
   container={true}
 >
-  <styled.div
+  <ForwardRef
     item={true}
   />
-</styled.div>
+</ForwardRef>
 `;
 
 exports[`grid handles justify 1`] = `

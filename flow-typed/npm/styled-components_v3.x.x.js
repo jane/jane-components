@@ -92,9 +92,7 @@ type $npm$styledComponents$ReactComponentStyledStaticPropsWithComponent<
   Props,
   ComponentList
 > = {|
-  withComponent: $npm$styledComponents$ReactComponentStyledWithComponent<
-    ComponentList
-  >,
+  withComponent: $npm$styledComponents$ReactComponentStyledWithComponent<ComponentList>,
   attrs: <AdditionalProps: {}>(
     AdditionalProps
   ) => $npm$styledComponents$ReactComponentStyledTaggedTemplateLiteralWithComponent<
@@ -193,9 +191,7 @@ type $npm$styledComponents$WithThemeReactComponentFunctionalUndefinedDefaultProp
   InputProps: { theme: $npm$styledComponents$Theme },
   OutputProps: $Diff<InputProps, { theme: $npm$styledComponents$Theme }>
 >(
-  $npm$styledComponents$ReactComponentFunctionalUndefinedDefaultProps<
-    InputProps
-  >
+  $npm$styledComponents$ReactComponentFunctionalUndefinedDefaultProps<InputProps>
 ) => $npm$styledComponents$ReactComponentFunctional<
   OutputProps,
   { theme: $npm$styledComponents$Theme }
@@ -214,9 +210,7 @@ type $npm$styledComponents$ThemeProviderProps = {
     | ((outerTheme: $npm$styledComponents$Theme) => void),
 }
 
-class Npm$StyledComponents$ThemeProvider extends React$Component<
-  $npm$styledComponents$ThemeProviderProps
-> {}
+class Npm$StyledComponents$ThemeProvider extends React$Component<$npm$styledComponents$ThemeProviderProps> {}
 
 class Npm$StyledComponents$StyleSheetManager extends React$Component<{
   sheet: mixed,
