@@ -88,6 +88,9 @@ module.exports = {
     '**/test-utils.js',
     '**/theme.js',
   ],
+  editorConfig: {
+    theme: 'ambiance',
+  },
   webpackConfig,
   theme,
   styleguideDir: 'docs',

@@ -4,6 +4,6 @@
   disabled={false}
   type="primary"
 >
-  BTN
+  Btn
 </Button>
 ```
