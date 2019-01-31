@@ -7,8 +7,8 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
-    "lib",
-    "dist"
+    "dist",
+    "lib"
   ],
   "scripts": {
     "build": "run-p -s build:*",
@@ -18,11 +18,11 @@
     "cover": "npm run test:jest -- --coverage --no-cache",
     "cover:coveralls": "if [ -n \"$COVERALLS_REPO_TOKEN\" ] ; then coveralls < coverage/lcov.info ; fi || true",
     "docs": "styleguidist build",
-    "format": "prettier \"{src,config}/**/*.js\" \"*.js\" --write && fixpack",
+    "format": "prettier \"{src,config}/**/*.js\" \"*.js\" --write && sortpack",
     "open-coverage": "opn coverage/lcov-report/index.html",
     "postbuild": "run-p -s docs copy-flow",
     "prebuild": "npm run test:build",
-    "precommit": "lint-staged && fixpack",
+    "precommit": "lint-staged && sortpack",
     "preversion": "npm run build",
     "start": "styleguidist server",
     "test": "run-s -s test:flow test:lint test:jest",
@@ -62,7 +62,6 @@
     "enzyme-adapter-react-16": "1.7.0",
     "eslint": "5.9.0",
     "eslint-plugin-jane": "1.1.1",
-    "fixpack": "2.3.1",
     "flow-bin": "0.86.0",
     "flow-copy-source": "2.0.2",
     "flow-typed": "2.5.1",
@@ -83,6 +82,7 @@
     "rollup-plugin-commonjs": "9.2.0",
     "rollup-plugin-node-resolve": "3.4.0",
     "rollup-plugin-peer-deps-external": "2.2.0",
+    "sortpack": "1.0.0",
     "styled-components": "4.1.1",
     "webpack": "4.26.0"
   },
@@ -93,16 +93,20 @@
     "collectCoverageFrom": [
       "src/**/*.js"
     ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "<rootDir>/config/jest/setup.js"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/styled.js",
+    "testEnvironment": "node",
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js",
       "<rootDir>/src/**/?(*.)(spec|test).js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/styled.js",
-    "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.js$": "babel-jest",
@@ -110,24 +114,20 @@
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.js$"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json"
     ]
   },
   "lint-staged": {
+    "ignore": [
+      "dist/*.js",
+      "lib/**/*.js",
+      "docs/**/*.js"
+    ],
     "linters": {
       "*.js": [
         "prettier --write",
         "git add"
       ]
-    },
-    "ignore": [
-      "dist/*.js",
-      "lib/**/*.js",
-      "docs/**/*.js"
-    ]
+    }
   },
   "optionalDependencies": {
     "fsevents": "*"
