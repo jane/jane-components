@@ -13,8 +13,8 @@ const SwitchBox = styled.label`
     disabled
       ? fromTheme('e0')
       : checked
-        ? fromTheme('action')
-        : fromTheme('e0')};
+      ? fromTheme('action')
+      : fromTheme('e0')};
   border-radius: 24px;
   color: white;
   height: 33px;
@@ -29,8 +29,8 @@ const SwitchBox = styled.label`
       disabled
         ? fromTheme('c')
         : checked
-          ? fromTheme('acitonDarker')
-          : fromTheme('c')};
+        ? fromTheme('acitonDarker')
+        : fromTheme('c')};
   }
 `
 

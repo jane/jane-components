@@ -14,5 +14,8 @@
     "flowtype": {
       "onlyFilesWithFlowAnnotation": true
     }
+  },
+  "rules": {
+    "flowtype/no-existential-type": 0
   }
 }
