@@ -1,4 +1,4 @@
-```js
+```tsx
 initialState = {checked: false};
 
 <div style={{ display: 'flex'}}>

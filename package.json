@@ -12,24 +12,21 @@
   ],
   "scripts": {
     "build": "run-p -s build:*",
-    "build:babel": "babel --ignore \"src/**/*.test.js\" src/ -d lib/",
+    "build:babel": "babel --extensions .ts,.tsx --ignore \"src/**/*.test.tsx\" src/ -d lib/",
     "build:rollup": "rollup -c",
-    "copy-flow": "flow-copy-source src lib",
     "cover": "npm run test:jest -- --coverage --no-cache",
-    "cover:coveralls": "if [ -n \"$COVERALLS_REPO_TOKEN\" ] ; then coveralls < coverage/lcov.info ; fi || true",
+    "cover:coveralls": "if [ -n \"$COVERALLS_REPO_TOKEN\" ]; then coveralls < coverage/lcov.info; fi || true",
     "docs": "styleguidist build",
-    "format": "prettier \"{src,config}/**/*.js\" \"*.js\" --write && sortpack",
+    "format": "prettier \"{src,config,.styleguide}/**/*.{ts,tsx,js}\" \"*.js\" --write && sortpack",
     "open-coverage": "opn coverage/lcov-report/index.html",
-    "postbuild": "run-p -s docs copy-flow",
+    "postbuild": "run-p -s docs",
     "prebuild": "npm run test:build && sortpack",
     "preversion": "npm run build",
     "start": "styleguidist server",
-    "test": "run-s -s test:flow test:lint test:jest",
-    "test:build": "run-s -s test:lint test:flow cover cover:coveralls",
-    "test:flow": "flow check",
+    "test": "run-s -s test:ts test:lint test:jest",
+    "test:build": "run-s -s test:lint cover cover:coveralls",
     "test:jest": "node config/jest/test.js --env=jsdom",
-    "test:lint": "eslint src config .styleguide *.js",
-    "update-types": "flow-typed update-cache && flow-typed install --overwrite"
+    "test:lint": "eslint --ext .ts,.tsx,.js src config .styleguide"
   },
   "homepage": "https://jane.github.io/jane-components",
   "repository": {
@@ -48,8 +45,14 @@
     "@babel/core": "7.4.4",
     "@babel/plugin-proposal-class-properties": "7.4.4",
     "@babel/preset-env": "7.4.4",
-    "@babel/preset-flow": "7.0.0",
     "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "7.3.3",
+    "@types/classnames": "2.2.7",
+    "@types/jest": "24.0.12",
+    "@types/react": "16.8.15",
+    "@types/react-dom": "16.8.4",
+    "@types/react-test-renderer": "16.8.1",
+    "@types/styled-components": "4.1.14",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.7.1",
     "babel-loader": "8.0.5",
@@ -60,10 +63,7 @@
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.12.1",
     "eslint": "5.16.0",
-    "eslint-plugin-jane": "5.0.0",
-    "flow-bin": "0.86.0",
-    "flow-copy-source": "2.0.3",
-    "flow-typed": "2.5.1",
+    "eslint-plugin-jane": "5.1.7",
     "husky": "2.1.0",
     "jest": "24.7.1",
     "jest-styled-components": "6.3.1",
@@ -74,8 +74,9 @@
     "opn-cli": "4.1.0",
     "prettier": "1.17.0",
     "react": "16.8.6",
+    "react-docgen-typescript": "1.12.4",
     "react-dom": "16.8.6",
-    "react-styleguidist": "8.0.6",
+    "react-styleguidist": "9.0.9",
     "react-test-renderer": "16.8.6",
     "rollup": "1.10.1",
     "rollup-plugin-babel": "4.3.2",
@@ -84,6 +85,7 @@
     "rollup-plugin-peer-deps-external": "2.2.0",
     "sortpack": "1.1.5",
     "styled-components": "4.2.0",
+    "typescript": "3.4.5",
     "webpack": "4.30.0",
     "whatwg-fetch": "3.0.0"
   },
@@ -92,10 +94,13 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.js"
+      "src/**/*.ts",
+      "src/**/*.tsx"
     ],
     "moduleFileExtensions": [
       "js",
+      "ts",
+      "tsx",
       "json"
     ],
     "setupFiles": [
@@ -105,12 +110,11 @@
     "setupTestFrameworkScriptFile": "<rootDir>/config/jest/styled.js",
     "testEnvironment": "node",
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js",
-      "<rootDir>/src/**/?(*.)(spec|test).js"
+      "<rootDir>/src/**/?(*.)(spec|test).(ts|tsx)"
     ],
     "testURL": "http://localhost",
     "transform": {
-      "^.+\\.js$": "babel-jest",
+      "^.+\\.(ts|js|tsx)$": "babel-jest",
       "^(?!.*\\.(js|json)$)": "<rootDir>/config/jest/file-transform.js"
     },
     "transformIgnorePatterns": [
@@ -119,12 +123,12 @@
   },
   "lint-staged": {
     "ignore": [
-      "dist/*.js",
-      "lib/**/*.js",
-      "docs/**/*.js"
+      "dist/**/*",
+      "lib/**/*",
+      "docs/**/*"
     ],
     "linters": {
-      "*.js": [
+      "*.ts": [
         "prettier --write",
         "git add"
       ]
@@ -136,7 +140,7 @@
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "styled-components": "^3.0.0 || ^4.0.0"
+    "styled-components": "^4.0.0"
   },
   "husky": {
     "hooks": {
