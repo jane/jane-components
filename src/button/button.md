@@ -1,4 +1,4 @@
-```js
+```tsx
 
 <Button
   disabled={false}
